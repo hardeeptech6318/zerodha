@@ -1,0 +1,120 @@
+body{
+  
+  min-width: 320px;
+  
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family:  Open Sans, sans-serif;
+  font-size: 14px;
+}
+
+.logo{
+  width: auto;
+  height: 20px;
+}
+
+
+
+a{
+  text-decoration: none;
+color: #444;
+font-size: .75rem;
+   
+}
+
+a:hover{
+  color: #ff5722;
+}
+
+.pagetitle{
+  font-size: 1.5rem;
+ 
+ }
+
+.label{
+  font-size: .75rem;
+  color: #9b9b9b;
+  
+}
+
+.leftside{
+  width: 30%;
+}
+.rightside{
+  width: 70%;
+}
+
+.bigvalue{
+  font-size: 2.625rem;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.headerpadding{
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
+}
+
+.secondary-title{
+  font-size: 1rem
+}
+
+.banner{
+  height: 230px;
+  width: 250px;
+}
+
+.page-title-small{
+  font-size: 1.125rem;
+}
+
+.form-select{
+  line-height: normal;
+  border-radius: 0px;
+  padding: 3px 15px;
+  font-size: 0.75rem;
+}
+
+.holdingsearch{
+  font-size: 0.75rem;
+  border: 1px solid #eee;
+ 
+}
+.inputsearch{
+  border: 0px;
+}
+
+/* input:focus .holdingsearch {
+  background-color: none;
+  width: 100%;  
+  border-color: white;
+  border: none;
+
+ 
+} */
+
+input[type=text] {
+  width: 80px;
+  transition: ease-in-out, width .35s ease-in-out;
+  border: 0px;
+  outline: none;
+}
+
+input[type=text]:focus {
+  width: 150px;
+  outline: none;
+}
+
+.linkblue{
+  color: blue;
+  font-size: 0.625rem;
+}
+
+.decimal{
+font-size: 0.5rem;
+}
+
+.bigvalue2{
+  font-size: 1.75rem;
+}
