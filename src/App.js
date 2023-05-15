@@ -9,14 +9,18 @@ import Positions from './component/Positions'
 import Funds from './component/Funds'
 
 
-import Gtt from './component/Gtt'
+import Gtt from './component/ordercomponent/Gtt'
 import Orders from './component/Orders'
 
 
 function App() {
   return (
     <>
-     <Header/>
+    
+    <header className='sticky-top bg-white'>
+    <Header/>
+    </header>
+    <main>    
     <div className=' mx-5 p-0 '>
       
       <div className='row m-0 p-0'>
@@ -26,13 +30,15 @@ function App() {
         <div className='rightside p-0 m-0  shadow-sm'>
         <Routes>
       <Route path="/" element={<Dashboard/>} />
-      <Route path="/orders" element={<Orders/>} />
+      <Route path="/orders/*" element={<Orders/>} />
+      {/* <Route path="/gtt" element={<Gtt/>} /> */}
+      {/* <Route/>   */}
       <Route path="/holdings" element={<Holdings />} />
       <Route path="/position" element={<Positions/>} /> 
       
       <Route path="/funds" element={<Funds />} />
       
-      <Route path="/orders/gtt" element={<Gtt/>} />
+      
       
     </Routes>
 
@@ -41,6 +47,8 @@ function App() {
 
 
     </div>
+    </main>
+
     
     </>
   )

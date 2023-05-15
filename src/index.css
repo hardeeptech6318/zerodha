@@ -118,3 +118,59 @@ font-size: 0.5rem;
 .bigvalue2{
   font-size: 1.75rem;
 }
+
+.navhover{
+  border-bottom: 2px solid white  ;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.navhover:hover{
+  
+  border-bottom: 2px solid #ff5722;
+  cursor: pointer;
+  color: #ff5722;
+}
+
+.navhover:hover:hover a{
+  color:#ff5722 ;
+}
+
+.fundbutton{
+  font-size: 14px;
+  border: 1px solid #4caf50;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+
+}
+.fundbutton:hover{
+  opacity: .8;
+  color: white;
+  outline: 0;
+  
+}
+
+.withdrawbutton{
+  font-size: 14px;
+  border: 1px solid #4184f3;
+  background-color: #4184f3;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+
+}
+.withdrawbutton:hover{
+  opacity: .8;
+  color: white;
+  outline: 0;
+  
+}
+
+.opacity75{
+  opacity: 0.7;
+}
+
+.active{
+  color: #ff5722  ;
+}

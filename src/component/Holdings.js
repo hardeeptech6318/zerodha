@@ -21,13 +21,13 @@ function Holdings() {
         <div>
         <div className="holdingsearch">
   <label className="m-1 mx-2 " ><i className="bi bi-search"></i></label>
-  <input className="inputsearch" placeholder="Search" type="text" />
+  <input className="inputsearch" placeholder="Filter eg:INFY" type="text" />
 </div>
         </div>
-        <div className="linkblue  mx-3"><a className="linkblue" href="/"><span className="me-1 fs-10 "><i class="bi bi-bag-dash"></i></span>authorization</a></div>
-        <div><a className="linkblue" href="/"><span className="me-1 fs-10" ><i class="bi bi-diagram-2"></i></span >family</a></div>
-        <div className="mx-3"><a className="linkblue" href="/"><span className="me-1 fs-10" ><i class="bi bi-clipboard-data"></i></span>Analytic</a></div>
-        <div><a className="linkblue"   href="/"><span className="me-1 fs-10 " ><i class="bi bi-download"></i></span>Download</a></div>
+        <div className="linkblue  mx-3"><a className="linkblue" href="/"><span className="me-1 fs-10 "><i className="bi bi-bag-dash"></i></span>authorization</a></div>
+        <div><a className="linkblue" href="/"><span className="me-1 fs-10" ><i className="bi bi-diagram-2"></i></span >family</a></div>
+        <div className="mx-3"><a className="linkblue" href="/"><span className="me-1 fs-10" ><i className="bi bi-record-circle-fill"></i></span>Analytic</a></div>
+        <div><a className="linkblue"   href="/"><span className="me-1 fs-10 " ><i className="bi bi-download"></i></span>Download</a></div>
         </div>
         </div>
       </section>

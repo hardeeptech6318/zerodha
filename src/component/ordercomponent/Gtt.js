@@ -2,7 +2,7 @@ import React from 'react'
 
 function Gtt() {
   return (
-    <div>Gtt</div>
+    <div><h1>GTT</h1>Gtt</div>
   )
 }
 

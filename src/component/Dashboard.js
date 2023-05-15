@@ -1200,7 +1200,7 @@ function Dashboard() {
         <div className="col-6">
           <h2 className="secondary-title mb-5">
             <span>
-              <i class="bi bi-graph-up-arrow"></i>
+              <i className="bi bi-graph-up-arrow"></i>
             </span>
             <span className="mx-3">Market Overview</span>
           </h2>
