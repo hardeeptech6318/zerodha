@@ -83,25 +83,17 @@ a:hover{
 }
 .inputsearch{
   border: 0px;
-}
-
-/* input:focus .holdingsearch {
-  background-color: none;
-  width: 100%;  
-  border-color: white;
-  border: none;
-
- 
-} */
-
-input[type=text] {
   width: 80px;
   transition: ease-in-out, width .35s ease-in-out;
   border: 0px;
   outline: none;
 }
 
-input[type=text]:focus {
+
+
+
+
+.inputsearch:focus {
   width: 150px;
   outline: none;
 }
@@ -174,3 +166,40 @@ font-size: 0.5rem;
 .active{
   color: #ff5722  ;
 }
+
+.sidebarsearch{
+  border: 0px;
+  width: 100%;
+  /* transition: ease-in-out, width .35s ease-in-out; */
+  border: 0px;
+  outline: none;
+  padding: 15px 10px 15px 0px;
+
+
+
+  /* border-bottom: 1px solid #f1f1f1; */
+}
+
+::placeholder{
+  font-size: .8125rem;
+  color: #9b9b9b;
+  overflow: hidden;
+  
+}
+
+.searchicon{
+  font-size: .7125rem;
+  color: #9b9b9b;
+  /* padding: 12px 12px 12px 12px; */
+}
+
+.hidehover{
+  visibility: hidden  ;
+}
+
+.hidemenubutton{
+  display: none;
+}
+
+
+
