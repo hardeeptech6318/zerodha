@@ -167,17 +167,15 @@ font-size: 0.5rem;
   color: #ff5722  ;
 }
 
+/*------------sidebar--------------------------*/
+
 .sidebarsearch{
   border: 0px;
   width: 100%;
-  /* transition: ease-in-out, width .35s ease-in-out; */
+  
   border: 0px;
   outline: none;
   padding: 15px 10px 15px 0px;
-
-
-
-  /* border-bottom: 1px solid #f1f1f1; */
 }
 
 ::placeholder{
@@ -201,5 +199,26 @@ font-size: 0.5rem;
   display: none;
 }
 
+.showmenu{
+ top:9px
+}
+
+.sidebartextsize{
+  font-size: .8125rem;
+}
+
+.padding12{
+  padding: 12px;
+}
+
+.hoverbuttondisign{
+  padding: 2px 12px 2px 12px;
+  margin: auto;
+  border-radius: 3px;
+  border: 1 px solid black;
+}
+.marketdepth{
+  display: none;
+}
 
 
