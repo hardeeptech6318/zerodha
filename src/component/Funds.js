@@ -4,7 +4,7 @@ function Funds() {
   return (
     <div className='p-4 pe-3'>
       <div>
-        <div className='text-end  p-3'>
+        <div className='text-end  tablepadding  '>
           <span className='label' >  Instant, zero-cost fund transfers with <span><i className="bi bi-bank2"></i></span> </span>
           <a className='fundbutton mx-2 px-4 ' href='/'>Add Funds</a>
           <a className='withdrawbutton px-4 ' href='/'>Withdraw</a>
@@ -28,73 +28,73 @@ function Funds() {
   <tbody>
     <tr>
      
-      <td className='opacity75 p-3'>Available margin</td>
-      <td className='bigvalue2 text-end '>0.00</td>
+      <td className='opacity75  tablepadding'>Available margin</td>
+      <td className=' text-end  tablepadding ' ><h1>0.00</h1></td>
    
     </tr>
     <tr>
       
-      <td className='opacity75 p-3'>Used margin</td>
-      <td className='bigvalue2 text-end '>0.00</td>
+      <td className='opacity75  tablepadding'>Used margin</td>
+      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
       
     </tr>
     <tr className='border-bottom'>
      
-      <td className='opacity75 p-3'>Available cash</td>
-      <td className='bigvalue2 text-end '>0.00</td>
+      <td className='opacity75  tablepadding'>Available cash</td>
+      <td className=' text-end  tablepadding ' ><h1>-371.25</h1></td>
       
     </tr>
 
     <tr>
-      <td className='opacity75 p-2' >Opening balance</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Opening balance</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
 
     <tr>
-      <td className='opacity75 p-2' >Payin</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Payin</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
 
 
     <tr>
-      <td className='opacity75 p-2' >Payout</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Payout</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr>
-      <td className='opacity75 p-2' >SPAN</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >SPAN</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr>
-      <td className='opacity75 p-2' >Delivery margin</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Delivery margin</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>    
 
     
     <tr>
-      <td className='opacity75 p-2' >Exposure</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Exposure</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr className='border-bottom'>
-      <td className='opacity75 p-2' >Options premium</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Options premium</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr>
-      <td className='opacity75 p-2' >Collateral (Liquid funds)</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Collateral (Liquid funds)</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr>
-      <td className='opacity75 p-2' >Collateral (Equity)</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Collateral (Equity)</td>
+      <td className='text-end  tablepadding '>0.00</td>
     </tr>
     
     <tr>
-      <td className='opacity75 p-2' >Total collateral</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepadding' >Total collateral</td>
+      <td className='text-end  tablepadding   '>0.00</td>
     </tr>
     
     
@@ -121,58 +121,58 @@ function Funds() {
   <tbody>
     <tr>
      
-      <td className='opacity75 p-3'>Available margin</td>
-      <td className='bigvalue2 text-end '>0.00</td>
+      <td className='opacity75  tablepaddingp'>Available margin</td>
+      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
    
     </tr>
     <tr>
       
-      <td className='opacity75 p-3'>Used margin</td>
-      <td className='bigvalue2 text-end '>0.00</td>
+      <td className='opacity75  tablepaddingp'>Used margin</td>
+      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
       
     </tr>
     <tr className='border-bottom'>
      
-      <td className='opacity75 p-3'>Available cash</td>
-      <td className='bigvalue2 text-end '>0.00</td>
+      <td className='opacity75  tablepaddingp'>Available cash</td>
+      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
       
     </tr>
 
     <tr>
-      <td className='opacity75 p-2' >Opening balance</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepaddingp' >Opening balance</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
 
     <tr>
-      <td className='opacity75 p-2' >Payin</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepaddingp' >Payin</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
 
 
     <tr>
-      <td className='opacity75 p-2' >Payout</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepaddingp' >Payout</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr>
-      <td className='opacity75 p-2' >SPAN</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepaddingp' >SPAN</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr>
-      <td className='opacity75 p-2' >Delivery margin</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepaddingp' >Delivery margin</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>    
 
     
     <tr>
-      <td className='opacity75 p-2' >Exposure</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepaddingp' >Exposure</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     <tr >
-      <td className='opacity75 p-2' >Options premium</td>
-      <td className='text-end  p-3'>0.00</td>
+      <td className='opacity75  tablepaddingp' >Options premium</td>
+      <td className='text-end  tablepadding  '>0.00</td>
     </tr>
     
     

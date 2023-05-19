@@ -37,19 +37,19 @@ function Holdings() {
             <div className="row">
               <div className="col-3">
               <div className="label" >Total investment</div>
-              <span className="bigvalue2">85,404</span><span>.00</span>
+              <h1>85,404</h1><span>.00</span>
               </div>
               <div className="col-3">
               <div className="label" >Current value</div>
-              <span className="bigvalue2">85,404</span><span >.00</span>
+              <h1>85,404</h1><span >.00</span>
               </div>
               <div className="col-3">
               <div className="label" >Days's P&L</div>
-              <span className="bigvalue2">85,404</span><span >.00</span>
+              <h1>85,404</h1><span >.00</span>
               </div>
               <div className="col-3">
               <div className="label" >Total P&L</div>
-              <span className="bigvalue2">85,404</span><span  >.00</span>
+              <h1>85,404</h1><span  >.00</span>
               </div>
             </div>
           </div>
