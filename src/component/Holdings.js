@@ -3,13 +3,13 @@ import Holdingchart from "./Holdingchart";
 
 function Holdings() {
   return (
-    <div className="p-4 pe-3" >
+    <div className="allpagepadding" >
       <section>
         <div className="d-flex justify-content-between "  >
         <div className="d-flex">
           <h3 className="page-title-small">Holdings(2)</h3>
           <div className="mx-3">
-          <select className=" form-select " id="floatingSelectGrid" aria-label="Floating label select example">
+          <select className=" form-select ">
         <option selected>All stocks</option>
         <option value="1">Kite only</option>
         <option value="2">Small case</option>
@@ -17,7 +17,7 @@ function Holdings() {
       </select>
           </div>
         </div>
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-baseline">
         <div>
         <div className="holdingsearch">
   <label className="m-1 mx-2 " ><i className="bi bi-search"></i></label>
@@ -30,9 +30,53 @@ function Holdings() {
         <div><a className="linkblue"   href="/"><span className="me-1 fs-10 " ><i className="bi bi-download"></i></span>Download</a></div>
         </div>
         </div>
+      
+
+      <div className="my-4">
+
+      <table class="table table-hover table-bordered table-responsive.">
+  <thead>
+    <tr className="label">
+      <th  scope="col">Instrument</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Avg. cost</th>
+      <th scope="col">LTP</th>
+      <th scope="col">Cur. val</th>
+      <th scope="col">Net chg.</th>
+      <th scope="col">Day chg.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th  scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+        
+      </div>
+      
+      
+      
       </section>
+
+
+
       <section>
-        <div>
+        <div className="my-5">
           <div>
             <div className="row">
               <div className="col-3">

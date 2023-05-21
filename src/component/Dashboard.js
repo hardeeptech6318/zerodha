@@ -1099,12 +1099,43 @@ function Dashboard() {
   };
 
   return (
-    <div className="m-4">
-      <h1 className="pagetitle py-3 border-bottom">Hi,Hardeepsinh</h1>
+    <div className="allpagepadding" >
+      <div className="pagetitle w-100 border-bottom pb-3">Hi, Hardeepsinh</div>
       <div>
-        <div className="row mb-5 pb-4 border-bottom ">
+        <div className="row  border-bottom my-4 ">
           <div className="col-6">
-            <div className="my-3 secondary-title">
+            <div className=" secondary-title mb-4 ">
+              <span className="me-3">
+                <i className="bi bi-pie-chart"></i>
+              </span>
+              <span>Equity</span>
+            </div>
+            <div>
+              <div className="row mb-5">
+                <div className="col-5">
+                  <div className="border-end">
+                  <div className="bigvalue">-340.9</div>
+                  <div className="label">Margin available</div>
+                </div>
+                </div>
+                <div className="col-7 p-2 ps-4">
+                  <div className="pb-2">
+                    <span className="label">Margins used</span>
+                    <span className="mx-2">0</span>
+                  </div>
+                  <div className="pb-2">
+                    <span className=" label ">Opening balance</span>
+                    <span className="mx-2">0</span>
+                  </div>
+                  <Link to="/" className="linkbluetext" >
+                    <span className="me-1 text-primary"><i className="bi bi-record-circle-fill"></i></span>View statement
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-6">
+            <div className=" secondary-title mb-4 ">
               <span className="me-3">
                 <i className="bi bi-pie-chart"></i>
               </span>
@@ -1112,50 +1143,23 @@ function Dashboard() {
             </div>
             <div>
               <div className="row">
-                <div className="col-5 border-end">
-                  <div className="bigvalue">0</div>
-                  <div className="label">Margin Available</div>
+                <div className="col-5">
+                  <div className="border-end">
+                  <div className="bigvalue">-340.9</div>
+                  <div className="label">Margin available</div>
                 </div>
-                <div className="col-7 p-3 ps-5">
-                  <div>
-                    <span className="label">Margins Used</span>
-                    <span className="mx-2">0</span>
-                  </div>
-                  <div className="my-2">
-                    <span className=" label ">Opening Balance</span>
-                    <span className="mx-2">0</span>
-                  </div>
-                  <Link to="/" className="label">
-                    view Statement
-                  </Link>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="my-3 secondary-title">
-              <span className="me-3">
-                <i className="bi bi-droplet"></i>
-              </span>
-              <span>Commodity</span>
-            </div>
-            <div>
-              <div className="row">
-                <div className="col-5 border-end">
-                  <div className="bigvalue">0</div>
-                  <div className="label">Margin Available</div>
-                </div>
-                <div className="col-7 p-3 ps-5 ">
-                  <div>
-                    <span className="label">Margins Used</span>
+                <div className="col-7 p-2 ps-4">
+                  <div className="pb-2">
+                    <span className="label">Margins used</span>
                     <span className="mx-2">0</span>
                   </div>
-                  <div className="my-2">
-                    <span className=" label ">Opening Balance</span>
+                  <div className="pb-2">
+                    <span className=" label ">Opening balance</span>
                     <span className="mx-2">0</span>
                   </div>
-                  <Link to="/" className="label">
-                    view Statement
+                  <Link to="/" className="linkbluetext" >
+                    <span className="me-1 text-primary"><i className="bi bi-record-circle-fill"></i></span>View statement
                   </Link>
                 </div>
               </div>

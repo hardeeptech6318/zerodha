@@ -27,8 +27,8 @@ function App() {
         <div className='leftside p-0 shadow-sm m-0  '>
 <Sidebar/>
         </div>
-        <div className='rightside p-0 m-0  shadow-sm'>
-        <Routes>
+        <div className='rightside   shadow-sm '  >
+        <Routes>  
       <Route path="/" element={<Dashboard/>} />
       <Route path="/orders/*" element={<Orders/>} />
       
