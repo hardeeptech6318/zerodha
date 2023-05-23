@@ -1,9 +1,16 @@
 
 
-function Tablesort(data,key) {
- console.log(data[0]);
+function Tablesort(data,key,type) {
+ 
+   
+    const data2 = [...data].sort((a, b) =>{
+    return b[key]-a[key] 
+   })
 
- return [data[0]];
+
+return data2
+
+
 }
 
 export default Tablesort

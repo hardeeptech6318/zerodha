@@ -1,18 +1,18 @@
 
 import React ,{useEffect, useState}  from 'react'
-import Tablesort from './commonfunction/Tablesort';
+
 
 
 function Sidebar() {
   const [page, setpage] = useState({});
   const [pagelength, setpagelength] = useState(0);
 
-
+ 
  
   const showmarketdepth =(item,i)=>{
     
     let id = document.getElementsByClassName(`showmarketdepth${i}`)[0].style.display;
-    console.log(id);
+  
     if(id=="none"){
       document.getElementsByClassName(`showmarketdepth${i}`)[0].style.display="block"
     }else{
@@ -296,7 +296,7 @@ const onleave=(item,i)=>{
        <div className='instrument'>
        <div >
        {page.items && page.items.length>0? page.items.map((ele,i)=>{
-      
+     
       
       return<>
       <div key={i} onMouseLeave={()=>onleave(ele,i)}  onMouseEnter={()=>onenter(ele,i)} className={`sidebardata${i} sidebarhover   position-relative d-flex justify-content-between  padding12 `} >
@@ -310,23 +310,23 @@ const onleave=(item,i)=>{
             </div>
           </div>
           <div> 
-            <span className='mx-2'><i class="bi bi-chevron-down"></i></span>
+            <span className='mx-2'><i className="bi bi-chevron-down"></i></span>
             <span className='ms-4 me-1 text-danger'>529.6</span>
           </div>
         </div>
-        <div className={` hoverbutton${i} hidemenubutton end-0 top-8  showmenu   position-absolute`}>
+        <div key={i} className={` hoverbutton${i} hidemenubutton end-0 top-8  showmenu   position-absolute`}>
             <button className=' hoverbuttondisign mx-1 bg-primary border-primary text-white' style={{backgroundColor:"#4184f3"}} >B</button>
             <button className='hoverbuttondisign bg-danger text-white border-danger ' >S</button>
-            <button className='hoverbuttondisign bgwhite  mx-1' onClick={()=>showmarketdepth(ele,i)}  ><i class="bi bi-text-center"></i></button>
-            <button className='hoverbuttondisign bgwhite ' ><i class="bi bi-graph-up-arrow"></i></button>
-            <button className='hoverbuttondisign bgwhite mx-1' ><i class="bi bi-trash3"></i></button>
-            <button className='hoverbuttondisign bgwhite  mx-1' ><i class="bi bi-three-dots"></i></button>
+            <button className='hoverbuttondisign bgwhite  mx-1' onClick={()=>showmarketdepth(ele,i)}  ><i className="bi bi-text-center"></i></button>
+            <button className='hoverbuttondisign bgwhite ' ><i className="bi bi-graph-up-arrow"></i></button>
+            <button className='hoverbuttondisign bgwhite mx-1' ><i className="bi bi-trash3"></i></button>
+            <button className='hoverbuttondisign bgwhite  mx-1' ><i className="bi bi-three-dots"></i></button>
             
         </div>
 
        
       </div>
-      <div className={`showmarketdepth${i}`} style={{display:"none"}} >
+      <div   className={`showmarketdepth${i}`} style={{display:"none"}} >
           {ele.tradingsymbol}
         </div>
         
@@ -334,7 +334,7 @@ const onleave=(item,i)=>{
       </>
     }):<>
     <div className='d-flex justify-content-center align-items-center flex-column'>
-    <div className='binoculars' ><i  class="bi bi-binoculars "></i></div>
+    <div className='binoculars' ><i  className="bi bi-binoculars "></i></div>
     <div><h2>Nothing here</h2></div>
     <div className='addinstrument' >Use the search bar to add instruments.</div>
     <button className='btn btn-primary my-3 '>Add Instrument</button>
@@ -344,11 +344,11 @@ const onleave=(item,i)=>{
        </div>
        </div>
 
-       <ul className=' '>
+       <ul >
         {data.map((el,i)=>{
-          return <li className={page.name==el.name? 'activepage sidebarpagination pe-auto opacity65':'sidebarpagination pe-auto opacity65'} onClick={()=>slectedpage(el)} >{i+1}</li>
+          return <li key={i} className={page.name==el.name? 'activepage sidebarpagination pe-auto opacity65':'sidebarpagination pe-auto opacity65'} onClick={()=>slectedpage(el)} >{i+1}</li>
         })}
-          <li className='setting'><span className='setting-btn'><i class="bi bi-gear"></i></span></li>
+          <li className='setting'><span className='setting-btn'><i className="bi bi-gear"></i></span></li>
         </ul>
     </div>
   )
