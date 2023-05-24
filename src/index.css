@@ -172,6 +172,10 @@ font-size: 0.5rem;
   /* padding: 10px 12px; */
 }
 
+.height60{
+  height: 60px  ;
+}
+
 .opacity65{
   opacity: 0.65;
 }
@@ -482,4 +486,35 @@ ul{
  .border-bottom,.border-end,.border-top,.border-start{
   border-color: #f1f1f1!important;
  }
+
+/*----------------order section ----------------------*/
+
+.wrapper{
+  min-height: calc(100vh - 60px);
+  background-color: white;
+}
+
+.orderjournal{
+font-size: 80px;
+color: #9b9b9b  ;
+}
+.orderhistory{
+  font-size: 14px;
+}
+
+.emptystate{
+
+  max-width: 250px;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.empty-icon{
+
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+
+}
 

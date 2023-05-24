@@ -21,9 +21,9 @@ function App() {
     <Header/>
     </header>
     <main>    
-    <div className=' mx-5 p-0 bg-white '>
+  
       
-      <div className='row m-0 p-0'>
+      <div className='wrapper d-flex mx-5 ' >
         <div className='leftside p-0 shadow-sm m-0  '>
 <Sidebar/>
         </div>
@@ -45,7 +45,6 @@ function App() {
       </div>
 
 
-    </div>
     </main>
 
     

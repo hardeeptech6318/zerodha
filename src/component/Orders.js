@@ -2,6 +2,7 @@ import React from 'react'
 import { Link,Outlet ,Routes,Route ,NavLink   } from 'react-router-dom'
 import Gtt from '../component/ordercomponent/Gtt'
 import Basket from './ordercomponent/Basket'
+import Order from './ordercomponent/Order'
 
 import Ipo from './ordercomponent/Ipo'
 import Auctions from './ordercomponent/Auctions'
@@ -11,9 +12,9 @@ import Sip from './ordercomponent/Sip'
 
 function Orders() {
   return (
-    <div  onMouseLeave  ={()=>console.log("jjjj")} >
-    <div className='d-flex align-items-center shadow-sm px-4  ' >
-      <div className='navhover  px-3' ><NavLink   className={({isActive}) => (isActive ? "active" : 'none')}  to=" " >Orders</NavLink>  </div>
+    <div  >
+    <div className='d-flex align-items-center border-bottom   px-4  ' >
+      <div className='navhover  px-3' ><NavLink   className={({isActive}) => (isActive ? "active" : 'none')}  to="" >Orders</NavLink>  </div>
       <div className='navhover  px-3' ><NavLink   className={({isActive}) => (isActive ? "active" : 'none')}  to="gtt" >GTT</NavLink>  </div>
       <div className='navhover  px-3' ><NavLink   className={({isActive}) => (isActive ? "active" : 'none')}  to="baskets" >Baskets</NavLink>  </div>
       <div className='navhover  px-3' ><NavLink   className={({isActive}) => (isActive ? "active" : 'none')}  to="sip" >SIP</NavLink>  </div>
@@ -25,7 +26,7 @@ function Orders() {
     </div>
     <div>
     <Routes>
-
+    <Route path="" element={<Order/>} />
         <Route path="gtt" element={<Gtt />} />
         <Route path="baskets" element={<Basket/>} />
         <Route path="alerts" element={<Alerts/>} />

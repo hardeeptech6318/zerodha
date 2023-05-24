@@ -2,7 +2,13 @@ import React from 'react'
 
 function Sip() {
   return (
-    <div>Sip</div>
+    <div className='d-flex flex-column align-items-center mt-5'>
+<div>
+      <img className='empty-icon' src='../image/sip.jpg'/>
+    </div>
+    <div>You haven't created any SIPs.</div>
+    <div className='mt-4'><button className='btn btn-primary'>Create new SIP</button></div>
+    </div>
   )
 }
 

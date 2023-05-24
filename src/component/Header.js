@@ -8,7 +8,7 @@ function Header() {
     <div className=" border-bottom px-5 shadow-sm sticky-top niftyheader">
       <div className="row m-0 p-0 align-items-center m-auto  ">
         <div className="leftside m-0    border-end  ">
-          <div className="d-flex align-items-center  fw-bold">  
+          <div className="d-flex align-items-center  fw-bold height60">  
             <div className="me-2 ">
               <span className="" >NIFTY 50</span>
               <span className="text-success mx-1    ">18147.65</span>

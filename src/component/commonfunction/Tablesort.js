@@ -4,7 +4,7 @@ function Tablesort(data,key,type) {
  
    
     const data2 = [...data].sort((a, b) =>{
-    return b[key]-a[key] 
+    return b[key]<a[key]?b[key]-a[key]:a[key]-b[key] 
    })
 
 
