@@ -314,12 +314,12 @@ const showtrade =()=>{
 
                   return <tr key={i} className=" border-top">
                   <td  scope="row" className=" tablepaddinghold">{ele.order_timestamp}</td>
-                  <td  scope="row" >{ele.transaction_type}</td>
+                  <td  scope="row" >{ele.transaction_type=="BUY"?<span class="buybadge ">{ele.transaction_type}</span>:<span class="sellbadge">{ele.transaction_type}</span>}</td>
                   <td  scope="row" >{ele.tradingsymbol}<span className='headerdim opacity75 ms-1'>{ele.exchange}</span></td>
                   <td  scope="row" >{ele.product}</td>
                   <td  scope="row">{ele.quantity}/{ele.filled_quantity}</td>
                   <td  scope="row" className='text-end border-end' >{ele.trigger_price!=0?<>{ele.average_price}/{ele.trigger_price}</>:ele.average_price}</td>
-                  <td  scope="row" className='text-success'>{ele.status}</td>
+                  <td  scope="row" ><span class="completebadge">{ele.status}</span></td>
 
                   </tr>
                   })}
@@ -333,10 +333,10 @@ const showtrade =()=>{
       </div>
 
 {/*------------------------------ Trades  ------------------------------- */}
-          <div>
+          <div className='mt-5'>
             <div>
 
-                  <div className='d-flex justify-content-between mt-2 mb-3'>
+                  <div className='d-flex justify-content-between  '>
                   <div>
                   <h3 style={{fontSize:"1.125rem"}} >Trades <button onClick={showtrade} className='btn'>{trades.length>0?<i class="bi bi-chevron-up"></i>:<i class="bi bi-chevron-down"></i>}</button> {trades.length>0?<>({trades.length})</>:null}</h3>
                   </div> 
@@ -382,11 +382,11 @@ const showtrade =()=>{
                             return <tr key={i} className=" border-top">
                             <td  scope="row" className=" tablepaddinghold">{ele.trade_id}</td>
                             <td  scope="row" >{ele.fill_timestamp}</td>
-                            <td  scope="row" >{ele.transaction_type}</td>
+                            <td  scope="row" ><span className='buybadge'>{ele.transaction_type}</span></td>
                             <td  scope="row" >{ele.tradingsymbol}<span>{ele.exchange}</span></td>
                             <td  scope="row">{ele.product}</td>
                             <td  scope="row" className='text-end border-end' >{ele.quantity}</td>
-                            <td  scope="row" className='text-success'>{ele.average_price}</td>
+                            <td  scope="row" className='text-end' >{ele.average_price}</td>
 
                             </tr>
                             })}
