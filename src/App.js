@@ -11,12 +11,13 @@ import Funds from './component/Funds'
 
 
 import Orders from './component/Orders'
+import Createorder from './component/Createorder'
 
 
 function App() {
   return (
     <>
-    
+       <Createorder/>
     <header className='sticky-top bg-white bg-white'>
     <Header/>
     </header>

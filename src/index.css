@@ -17,7 +17,7 @@ body{
 }
 
 
-a , .label , .form-select , .holdingsearch,.niftyheader {
+a , .label , .form-select , .holdingsearch,.niftyheader,.modal_order {
   font-size: 0.75rem;
 }
 
@@ -108,7 +108,7 @@ a:hover{
 
 .linkblue,.headerdim{
  
-  font-size: 0.625rem;
+  font-size: 0.625rem!important;
 }
 
 .linkblue,.linkbluetext{
@@ -241,6 +241,10 @@ input:focus, textarea:focus, select:focus{
   
 }
 
+.smalltext{
+  font-size: .8125rem;
+}
+
 .searchicon{
   font-size: .7125rem;
   color: #9b9b9b;
@@ -299,12 +303,13 @@ display: none;
 }
 
 .hoverbuttondisign{
-  padding: 2px 12px 2px 12px;
-  margin: auto;
+  padding: 4px 14px!important;
+
   border-radius: 3px;
   border: 1px solid #9b9b9b;
   transition: opacity .15s;
-  font-size: 0.7125rem;
+  font-size: 11px;
+  font-weight: 600;
 }
 .marketdepth{
   display: none;
@@ -320,6 +325,15 @@ display: none;
   background-color: #f1f1f1;
   
 
+}
+
+.bg-primary{
+  background-color: #4184f3;
+  opacity: 0.78;
+}
+
+.orange{
+  background-color: #ff5722;
 }
 
 h2{
@@ -542,5 +556,78 @@ color: #9b9b9b  ;
   border-radius: 2px;
   font-size: 0.6125rem;
 }
+.text-red{
+  color: #ff5722;
+}
 
+.border3{
+  border-radius: 3px 3px 0 0;
+}
+
+.click{
+  cursor: pointer;
+}
+
+.lighttext{
+  color: #9b9b9b  ;
+}
+
+.order_header{
+
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: -5.5px;
+  border-bottom: 2px solid #eee;
+}
+
+.order_content{
+  background-color:#f9f9f9;
+  border-bottom: 2px solid #eee;
+  
+}
+
+.checked{
+  color: #4184f3;
+  border-bottom: 2px solid #4184f3;
+}
+
+input[type=number]{
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: #444;
+  width: 100%;  
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 21px;
+}
+
+.order_select{
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 11px 15px;
+  color: #444;
+  width: 100%;  
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.3em;
+}
+
+.label_position{
+  top:-10px;
+  left:25px;
+  
+}
+
+.diablebg{
+  background-image: url("https://www.shutterstock.com/image-illustration/subtle-diagonal-line-seamless-pattern-260nw-2290199603.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #9b9b9b;
+}
+
+th{
+  color: #9b9b9b;
+  
+}
 

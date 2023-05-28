@@ -316,18 +316,135 @@ const onleave=(item,i)=>{
         </div>
         <div key={i} className={` hoverbutton${i} hidemenubutton end-0 top-8  showmenu   position-absolute`}>
             <button className=' hoverbuttondisign mx-1 bg-primary border-primary text-white' style={{backgroundColor:"#4184f3"}} >B</button>
-            <button className='hoverbuttondisign bg-danger text-white border-danger ' >S</button>
+            <button className='hoverbuttondisign orange text-white border-danger ' >S</button>
             <button className='hoverbuttondisign bgwhite  mx-1' onClick={()=>showmarketdepth(ele,i)}  ><i className="bi bi-text-center"></i></button>
             <button className='hoverbuttondisign bgwhite ' ><i className="bi bi-graph-up-arrow"></i></button>
-            <button className='hoverbuttondisign bgwhite mx-1' ><i className="bi bi-trash3"></i></button>
+            <button className='hoverbuttondisign bgwhite ms-1' ><i className="bi bi-trash3"></i></button>
             <button className='hoverbuttondisign bgwhite  mx-1' ><i className="bi bi-three-dots"></i></button>
             
         </div>
 
        
       </div>
-      <div   className={`showmarketdepth${i}`} style={{display:"none"}} >
-          {ele.tradingsymbol}
+      <div   className={`showmarketdepth${i} px-4 smalltext shadow-sm `} style={{display:"none"}} >
+          <div className='row border-bottom '>
+            <div className='col-6'>
+            <table class="table-borderless w-100 mb-2">
+  <thead>
+    <tr>
+      <th scope="col  " className='headerdim text-start px-0'>BID</th>
+      <th scope="col  " className='headerdim text-end px-0'>ORDERS</th>
+      <th scope="col " className='headerdim text-end px-0'>QTY.</th>
+    </tr>
+  </thead>
+  <tbody className='text-primary'>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+  </tbody>
+  <tfoot className='text-primary'>
+        <tr>
+          <td className='text-start'>Total</td>
+          <td></td>
+          <td className='text-end'>0</td>
+        </tr>
+  </tfoot>
+  
+</table>
+            </div>
+            <div className='col-6'>
+            <table class="table-borderless w-100 ">
+  <thead>
+    <tr>
+      <th scope="col" className='headerdim px-0 text-start'>OFFER</th>
+      <th scope="col" className='headerdim px-0 text-end'>ORDERS</th>
+      <th scope="col" className='headerdim px-0 text-end'>QTY.</th>
+    </tr>
+  </thead>
+  <tbody className='text-red'>
+  <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+    <tr>
+      <td className='text-start'>0.00</td>
+      <td className='text-end'>0</td>
+      <td className='text-end'>0</td>
+    </tr>
+  </tbody>
+  <tfoot className='text-red'>
+        <tr>
+          <td>Total</td>
+          <td></td>
+          <td className='text-end'>0</td>
+        </tr>
+  </tfoot>
+</table>
+            </div>
+          </div>
+          <div className='row text-center'>
+            <div className='col text-primary py-2'><i class="bi bi-chevron-down"></i>  View 20 depth</div></div>
+          <div className='row border-top py-3 '>
+          <div className='row m-0 p-0 '>
+            <div className='col-6  '><div className='row  '><div className='col-6  ps-0 lighttext '>Open</div><div className='col-6   text-end'>555.5</div></div></div>
+            <div className='col-6 '><div className='row '><div className='col-6   lighttext'>High</div><div className='col-6  pe-0 text-end'>559.5</div></div></div>
+          </div>
+          <div className='row m-0 p-0'>
+          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>Low</div><div className='col-6   text-end'>555.5</div></div></div>
+          <div className='col-6 '><div className='row'><div className='col-6   lighttext '>Prev. Close</div><div className='col-6  pe-0 text-end'>555.5</div></div></div>
+          </div>
+          <div className='row m-0 p-0'>
+          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>volume</div><div className='col-6   text-end'>N/A</div></div></div>
+          <div className='col-6 '><div className='row'><div className='col-6   lighttext '>Avg. price</div><div className='col-6  pe-0 text-end'>N/A</div></div></div>
+          </div>
+          <div className='row m-0 p-0'>
+          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>LTQ</div><div className='col-6   text-end'>N/A</div></div></div>
+          <div className='col-6 '><div className='row'><div className='col-3   lighttext '>LTT</div><div className='col pe-0 w-100 text-end'>2023-05-26 15:59:37</div></div></div>
+          </div>
+          <div className='row m-0 p-0'>
+          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>Lower circuit</div><div className='col-6   text-end'>555.5</div></div></div>
+          <div className='col-6 '><div className='row'><div className='col-7   lighttext '>Upper circuit</div><div className='col-5  pe-0 text-end'>555.5</div></div></div>
+          </div>
+
+          </div>
         </div>
         
         

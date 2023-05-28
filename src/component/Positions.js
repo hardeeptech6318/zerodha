@@ -203,8 +203,8 @@ const [data, setdata] = useState(data2);
                   <td  scope="row" >{ele.quantity}</td>
                   <td  scope="row" >{ele.average_price.toFixed(2)}</td>
                   <td  scope="row">{ele.last_price.toFixed(2)}</td>
-                  <td  scope="row"  >{ele.pnl>0?<span className='text-success'>{ele.pnl.toFixed(2)}</span>:<span className='text-danger'>{ele.pnl.toFixed(2)}</span>}</td>
-                  <td  scope="row" >{(((ele.last_price-ele.average_price)/ele.average_price)*100)>0?<span className='test-success'>{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>:<span className='text-danger fw-normal' >{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>}</td>
+                  <td  scope="row"  >{ele.pnl>0?<span className='text-success'>{ele.pnl.toFixed(2)}</span>:<span className='text-red'>{ele.pnl.toFixed(2)}</span>}</td>
+                  <td  scope="row" >{(((ele.last_price-ele.average_price)/ele.average_price)*100)>0?<span className='test-success'>{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>:<span className='text-red fw-normal' >{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>}</td>
                       
                   </tr>
                   })}
@@ -226,7 +226,7 @@ const [data, setdata] = useState(data2);
 <td></td>
 <td></td>
 <td className='text-center' >Total</td>
-<td>{data.net.map((ele)=>ele.pnl).reduce((a,b)=>a+b)>0?<span className='text-success' >{data.net.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>:<span className='text-danger'>{data.net.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>}</td>
+<td>{data.net.map((ele)=>ele.pnl).reduce((a,b)=>a+b)>0?<span className='text-success' >{data.net.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>:<span className='text-red'>{data.net.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>}</td>
 <td></td>
 
 
@@ -293,8 +293,8 @@ const [data, setdata] = useState(data2);
             <td  scope="row" >{ele.quantity}</td>
             <td  scope="row" >{ele.average_price.toFixed(2)}</td>
             <td  scope="row">{ele.last_price.toFixed(2)}</td>
-            <td  scope="row"  >{ele.pnl>0?<span className='text-success'>{ele.pnl.toFixed(2)}</span>:<span className='text-danger'>{ele.pnl.toFixed(2)}</span>}</td>
-                  <td  scope="row" >{(((ele.last_price-ele.average_price)/ele.average_price)*100)>0?<span className='test-success'>{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>:<span className='text-danger fw-normal' >{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>}</td>
+            <td  scope="row"  >{ele.pnl>0?<span className='text-success'>{ele.pnl.toFixed(2)}</span>:<span className='text-red'>{ele.pnl.toFixed(2)}</span>}</td>
+                  <td  scope="row" >{(((ele.last_price-ele.average_price)/ele.average_price)*100)>0?<span className='test-success'>{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>:<span className='text-red fw-normal' >{(((ele.last_price-ele.average_price)/ele.average_price)*100).toFixed(2)}</span>}</td>
 
             </tr>
             })}
@@ -314,7 +314,7 @@ const [data, setdata] = useState(data2);
 <td></td>
 <td></td>
 <td className='text-center' >Total</td>
-<td>{data.day.map((ele)=>ele.pnl).reduce((a,b)=>a+b)>0?<span className='text-success' >{data.day.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>:<span className='text-danger'>{data.day.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>}</td>
+<td>{data.day.map((ele)=>ele.pnl).reduce((a,b)=>a+b)>0?<span className='text-success' >{data.day.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>:<span className='text-red'>{data.day.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2)}</span>}</td>
 <td></td>
 
 
