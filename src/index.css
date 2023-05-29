@@ -591,7 +591,18 @@ color: #9b9b9b  ;
   border-bottom: 2px solid #4184f3;
 }
 
-input[type=number]{
+/* input[type=number]{
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: #444;
+  width: 100%;  
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 21px;
+} */
+
+.biginput{
   border: 1px solid #eee;
   border-radius: 3px;
   padding: 5px 10px;
@@ -629,5 +640,25 @@ input[type=number]{
 th{
   color: #9b9b9b;
   
+}
+
+.order_link{
+  color:#4184f3;
+}
+.order_link:hover{
+color:#ff5722;
+}
+
+.smallinput{
+  display: inline-block;
+  text-align: center;
+  width: 60px;
+  padding: 0 0px;
+  margin: 0;
+  color: #9b9b9b;
+  line-height: normal;
+  appearance: textfield;
+  border: 1px solid #eee;
+  font-size: 14px!important;
 }
 

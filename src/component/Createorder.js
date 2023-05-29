@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 
 function Createorder() {
   const [value, setvalue] = useState("regular");
+  const [hide, sethide] = useState(true);
  
 const checkbox= (e)=>{
   setvalue(e.target.value)
@@ -19,21 +20,21 @@ const onChangeValue = (e)=>{
     
 <div className=' border '
 
-style={{width:"600px",position:"fixed",    top:"63px",
+style={{width:"600px",position:"fixed",    top:"0px",
 bottom: "auto",
 left: "640px",borderRadius: "3px 3px 0 0",zIndex:"1",backgroundColor:"#f9f9f9"}} >
 
     <div className='container '>
         <div className='row py-3 bg-primary text-white border3 '>
-          <div className='col-6'>Buy TORNTPOWER NSE x 1 Qty</div>
-          <div className='col-6'>
+          <div className='col-6 fw-bold'>Buy TORNTPOWER <small >NSE</small> x 1 Qty</div>
+          <div className='col-6 '>
             <div class="form-check form-switch form-check-reverse  ">
             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked/>
             </div>
           </div>
-          <div className='col-6 d-flex '>
-          <div className='d-flex align-items-center me-2' ><input className='me-1' type="radio" value="Female" name="gender" />BSE</div>
-          <div className='d-flex align-items-center ms-5 me-2 ' ><input className='me-1' type="radio" value="Female" name="gender" />NSE</div>
+          <div className='col-6 d-flex modal_order '>
+          <div className='d-flex align-items-center me-2' ><input className='me-1' type="radio" value="Female" name="gender" />BSE: ₹252.85</div>
+          <div className='d-flex align-items-center ms-5 me-2 ' ><input className='me-1' type="radio" value="Female" name="gender" />NSE: ₹252.75</div>
           </div>   
         </div>
     
@@ -64,7 +65,7 @@ left: "640px",borderRadius: "3px 3px 0 0",zIndex:"1",backgroundColor:"#f9f9f9"}}
       </div>
     </div>
 
-    <div className='container modal_order p-3 bg-white'>
+    <div className='container modal_order p-3 pb-0 bg-white'>
         
         <div className='row  '>
           <div className='col-5'>
@@ -80,15 +81,15 @@ left: "640px",borderRadius: "3px 3px 0 0",zIndex:"1",backgroundColor:"#f9f9f9"}}
         <div className='row mt-4'>
           <div className='col-4 position-relative'>
             <label className='position-absolute label_position' >Qty.</label>
-            <input type='number'/>
+            <input type='number' className='biginput'/>
           </div>
           <div className='col-4 position-relative'>
           <label className='position-absolute label_position' >Price</label>
-            <input type='number'/>
+            <input type='number' className='biginput'/>
           </div>
           <div className='col-4 position-relative '>
-          <label className='position-absolute label_position' >Trigger price</label>
-            <input type='number'/>
+          <label className='position-absolute label_position ' >Trigger price</label>
+            <input type='number' className='biginput'/>
             </div>
         </div>
 
@@ -112,21 +113,23 @@ left: "640px",borderRadius: "3px 3px 0 0",zIndex:"1",backgroundColor:"#f9f9f9"}}
           <div className='col-4 position-relative '>
             <div className='diablebg'>
           <label className='position-absolute label_position' >Number of legs</label>
-            <input type='number' disabled className=''/>
+            <input type='number' disabled className='biginput'/>
             </div>
             <div className='lighttext mt-2'>1 qty. per leg</div>
             
           </div>
         </div>
 
-        <div className='row '>
-          <div className='col text-end'>
-          Hide options
+        <div className='row my-3 '>
+          <div className='col text-end '>
+          <a className='order_link  click' onClick={()=>sethide(!hide)}>
+          <span>{hide?'Show option':'Hide option'}</span><span className='ms-2'>{hide?<i class="bi bi-chevron-down"></i>:<i class="bi bi-chevron-up"></i>}</span>
+          </a>
           </div>
           
         </div>
 
-        <div className='row'>
+        <div className='row my-3 ' style={{display:hide?'none':'flex'}}>
           <div className='col-4'>
             <div className='d-flex flex-column' onChange={(e)=>onChangeValue(e)}>
             <label>Validity</label>
@@ -146,12 +149,27 @@ left: "640px",borderRadius: "3px 3px 0 0",zIndex:"1",backgroundColor:"#f9f9f9"}}
           </div>
           <div className='col-4 position-relative'>
             <label className='position-absolute label_position ' >Disclosed qty.</label>
-            <input type='number'/>
+            <input type='number' className='biginput'/>
           </div>
         </div>
 
        
+<div className='row border-top border-bottom py-1'>
+  <div className='col-1 p-2'><img src='https://kite.zerodha.com/static/images/gtt-logo.svg' className='h-100 w-100' /></div>
+  <div className='col-4 d-flex align-items-center'>
+  <div className='d-flex'><input type="checkbox" className='  me-1' /> <span>Stoploss</span></div>
+  <div className='lighttext' ><input type='number' className='smallinput w-50 ms-2' />%</div>
+  
+  
+  
 
+  </div>
+  <div className='col-4 d-flex align-items-center'>
+  <div className='d-flex'><input type="checkbox" className='  me-1' /> <span>target</span></div>
+  <div className='lighttext' ><input type='number' className='smallinput w-50 ms-2' />%</div>
+  </div>
+  <div className='col-2'>Learn more</div>
+</div>
 
     
     </div>
@@ -159,8 +177,8 @@ left: "640px",borderRadius: "3px 3px 0 0",zIndex:"1",backgroundColor:"#f9f9f9"}}
     <div className='row py-3 modal_order align-items-center px-3'>
           <div className='col-6'>Margin <span className='text-primary'>₹2,210.00</span> (5x) Charges <span className='text-primary'>₹4.35</span> </div>
           <div className='col-6 text-end'>
-          <button type="button" class="btn btn-primary px-3 me-2   ">Buy</button>
-          <button type="button" class="btn btn-outline-secondary ">Cancel</button>
+          <button type="button" class="btn btn-primary px-4 py-2  ">Buy</button>
+          <button type="button" class="btn btn-outline-secondary py-2 ms-2 ">Cancel</button>
           </div>
 
         </div>
