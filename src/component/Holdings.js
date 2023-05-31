@@ -537,7 +537,7 @@ const [calculate, setcalculate] = useState({
 });
 
 useEffect(()=>{
-  let investment =data.map((ele)=>ele.quantity*ele.average_price).reduce((a,b)=>a+b).toFixed(2).toString().split(".")
+let investment =data.map((ele)=>ele.quantity*ele.average_price).reduce((a,b)=>a+b).toFixed(2).toString().split(".")
 let current =data.map((ele)=>ele.quantity*ele.last_price).reduce((a,b)=>a+b).toFixed(2).toString().split(".")
 let daypl =data.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2).toString().split(".")
 let pl =data.map((ele)=>ele.pnl).reduce((a,b)=>a+b).toFixed(2).toString().split(".")

@@ -314,7 +314,7 @@ const showtrade =()=>{
 
                   return <tr key={i} className=" border-top">
                   <td  scope="row" className=" tablepaddinghold">{ele.order_timestamp}</td>
-                  <td  scope="row" >{ele.transaction_type=="BUY"?<span class="buybadge ">{ele.transaction_type}</span>:<span class="sellbadge">{ele.transaction_type}</span>}</td>
+                  <td  scope="row" ><span class={ele.transaction_type=="BUY"?"buybadge ":'sellbadge'}>{ele.transaction_type}</span></td>
                   <td  scope="row" >{ele.tradingsymbol}<span className='headerdim opacity75 ms-1'>{ele.exchange}</span></td>
                   <td  scope="row" >{ele.product}</td>
                   <td  scope="row">{ele.quantity}/{ele.filled_quantity}</td>

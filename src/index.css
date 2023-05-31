@@ -560,6 +560,14 @@ color: #9b9b9b  ;
   color: #ff5722;
 }
 
+.bg-white{
+  background-color: #fff;
+}
+
+.bg-red{
+  background-color: #ff5722;
+}
+
 .border3{
   border-radius: 3px 3px 0 0;
 }
