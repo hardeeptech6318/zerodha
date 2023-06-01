@@ -11,7 +11,7 @@ function Createorder() {
     toggle:toggle?'buy':'sell',
     order_type:'regular',
     exchange:'NSE',
-    intra_long:'long_term',
+    intra_long:'longterm',
     quantity:0,
     price:0,
     trigger_price:0,
@@ -79,7 +79,7 @@ function Createorder() {
               <div className="d-flex align-items-center me-2">
                 <input
                   onChange={(e) => {
-                    setform({...form,exchange:'BSE'});
+                    setform({...form,exchange:'BSE',order_type:form.order_type==='cover'?'regular':form.order_type});
                   }}
                   checked={form.exchange == "BSE"}
                   className="me-1"
@@ -136,7 +136,7 @@ function Createorder() {
                     Regular
                   </label>
                 </div>
-                <div className="px-2 py-1">
+                {form.exchange==='NSE'?<div className="px-2 py-1">
                   <input
                     class="form-check-input d-none"
                     type="radio"
@@ -156,7 +156,7 @@ function Createorder() {
                   >
                     Cover
                   </label>
-                </div>
+                </div>:null}
                 <div className="px-2 py-1">
                   <input
                     class="form-check-input d-none"
@@ -241,18 +241,18 @@ function Createorder() {
 
           <div className="row mt-4">
             <div className="col-4 position-relative">
-              <label className="position-absolute label_position">Qty.</label>
+              <label className="position-absolute label_position ">Qty.</label>
               <input type="number" className="biginput" onChange={(e)=>setform({...form,quantity:e.target.value})} />
             </div>
             <div className="col-4 position-relative">
-              <label className="position-absolute label_position">Price</label>
-              <input type="number" className="biginput" onChange={(e)=>setform({...form,price:e.target.value})} />
+              <label className="position-absolute label_position bg-white px-1">Price</label>
+              <input type="number" className={form.market_limit!=='limit'?"biginput diablebg":"biginput "} disabled={form.market_limit!=='limit' } onChange={(e)=>setform({...form,price:e.target.value})} />
             </div>
             <div className="col-4 position-relative ">
               <label className="position-absolute label_position ">
                 Trigger price
               </label>
-              <input type="number" className="biginput" onChange={(e)=>setform({...form,trigger_price:e.target.value})} />
+              <input disabled={form.sl==='SL' ||form.sl==='SL-M' ?false:true} type="number" className={form.sl==='SL' ||form.sl==='SL-M' ?"biginput ":"biginput diablebg"} onChange={(e)=>setform({...form,trigger_price:e.target.value})} />
             </div>
           </div>
 
@@ -265,7 +265,7 @@ function Createorder() {
                   type="radio"
                   value="market"
                   name="market_limit"
-                  onChange={()=>setform({...form,market_limit:'market'})}
+                  onChange={()=>setform({...form,market_limit:'market',sl:''})}
                   checked={form.market_limit=='market'}
                 />
                 Market
@@ -277,7 +277,7 @@ function Createorder() {
                   value="limit"
                   name="market_limit"
                   checked={form.market_limit=='limit'}
-                  onChange={()=>setform({...form,market_limit:'limit'})}
+                  onChange={()=>setform({...form,market_limit:'limit',sl:''})}
                 />
                 Limit
               </div>
@@ -289,7 +289,7 @@ function Createorder() {
                   type="radio"
                   value="SL-M"
                   name="sl"
-                  onChange={()=>setform({...form,sl:'SL-M'})}
+                  onChange={()=>setform({...form,sl:'SL-M',market_limit:''})}
                   checked={form.sl=='SL-M'}
                 />  SL-M
               </div>
@@ -300,27 +300,27 @@ function Createorder() {
                   value="SL"
                   name="sl"
                   checked={form.sl=='SL'}
-                  onChange={()=>setform({...form,sl:'SL'})}
+                  onChange={()=>setform({...form,sl:'SL',market_limit:''})}
                 />  SL
               </div>
             </div>
           </div>
 
-          <div className="row">
+         {form.order_type==='iceberg'? <div className="row">
             <div className="col-4 position-relative ">
-              <div className="diablebg">
+              <div >
                 <label className="position-absolute label_position">
                   Number of legs
                 </label>
-                <input type="number" disabled className="biginput"  onChange={(e)=>setform({...form,legs:e.target.value})} />
+                <input type="number" className="biginput"  onChange={(e)=>setform({...form,legs:e.target.value})} />
               </div>
               <div className="lighttext mt-2">1 qty. per leg</div>
             </div>
-          </div>
+          </div>:null}
 
           {/*------------------- show hide button---------------* */}
 
-          <div className="row my-3 ">
+          <div className="row py-3 ">
             <div className="col text-end ">
               <a className="order_link  click" onClick={() => sethide(!hide)}>
                 <span>{hide ? "Show option" : "Hide option"}</span>
@@ -338,7 +338,7 @@ function Createorder() {
           {/* -----------------show hide content -------------------------* */}
 
           <div
-            className="row my-3 "
+            className="row my-3  "
             style={{ display: hide ? "none" : "flex" }}
           >
             <div className="col-4">
@@ -348,7 +348,7 @@ function Createorder() {
               >
                 <label>Validity</label>
                 <div className="mt-1">
-                  <input type="radio" value="day" name="validity" checked={form.validity=='day'} onChange={(e) => setform({...form,validity:e.target.value})} /> Day
+                  <input type="radio"  value="day" name="validity" checked={form.validity=='day'} onChange={(e) => setform({...form,validity:e.target.value})} /> Day
                 </div>
                 <div className="mt-1">
                   <input type="radio" value="immediate" name="validity" checked={form.validity=='immediate'} onChange={(e) => setform({...form,validity:e.target.value})} /> Immediate
@@ -360,7 +360,7 @@ function Createorder() {
               </div>
             </div>
             <div className="col-4">
-              <select className="order_select">
+              <select className= {form.validity==='minutes'?"order_select  ":'order_select diablebg'} disabled={form.validity!=='minutes'}>
                 <option selected>1 minutes</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -371,13 +371,13 @@ function Createorder() {
               <label className="position-absolute label_position ">
                 Disclosed qty.
               </label>
-              <input type="number" className="biginput" />
+              <input type="number" className={form.validity==='immediate'?"biginput  diablebg":"biginput"} disabled={form.validity==='immediate'} />
             </div>
           </div>
 
           {/*---------------------- GTT option ---------------------- */}
 
-          <div className="row border-top border-bottom py-1">
+       {form.intra_long==='longterm'?   <div className="row border-top border-bottom py-1">
             <div className="col-1 p-2">
               <img
                 src="https://kite.zerodha.com/static/images/gtt-logo.svg"
@@ -402,12 +402,12 @@ function Createorder() {
               </div>
             </div>
             <div className="col-2">Learn more</div>
-          </div>
+          </div>:null}
         </div>
 
         {/*----------------footer--------------------------- */}
 
-        <div className="row py-3 modal_order align-items-center px-3">
+        <div className="row  modal_order align-items-center py-2 px-3">
           <div className="col-6">
             Margin <span className="text-primary">₹2,210.00</span> (5x) Charges{" "}
             <span className="text-primary">₹4.35</span>{" "}
@@ -417,8 +417,8 @@ function Createorder() {
               type="button"
               class={
                 toggle
-                  ? "btn btn-primary px-4 py-2"
-                  : "btn bg-red text-white px-4 py-2"
+                  ? "btn btn-primary px-4 py-2 "
+                  : "btn  btn-danger bg-red text-white px-4 py-2"
               }
             >
               {toggle ? "Buy" : "Sell"}

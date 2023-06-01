@@ -633,16 +633,26 @@ color: #9b9b9b  ;
 }
 
 .label_position{
-  top:-10px;
+  top:-8px;
   left:25px;
+  background-color: white;
+  padding: 0px 3px;
+  z-index: 1;
   
 }
 
 .diablebg{
-  background-image: url("https://www.shutterstock.com/image-illustration/subtle-diagonal-line-seamless-pattern-260nw-2290199603.jpg");
+  background-image: url("../public/image/disbale.png");
+opacity: 0.4!important;
   background-size: cover;
   background-position: center;
   color: #9b9b9b;
+  
+}
+
+
+.form-check-input:focus{
+  box-shadow: none;
 }
 
 th{
