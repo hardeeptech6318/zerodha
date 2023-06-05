@@ -4,6 +4,7 @@ function Createorder() {
   
   const [hide, sethide] = useState(true);
   const [toggle, settoggle] = useState(true);
+  const [tags, settags] = useState(false);
   
   
 
@@ -38,21 +39,23 @@ function Createorder() {
 
   return (
     <>
+    
       <div
         className=" border shadow-sm "
         style={{
-          width: "600px",
           position: "fixed",
-          top: "60px",
+          top: "10%",
           bottom: "auto",
-          left: "640px",
+          left: "auto",
+          right:"25%",
           borderRadius: "3px 3px 0 0",
           zIndex: "1",
           backgroundColor: "#f9f9f9",
+          width:tags?"725px":"600px"
         }}
       >
          {/*######################## header ############################################* */}
-        <div className="container ">
+        <div className="container " style={tags?{width:"725px"}:{width:"600px"}}>
          
           <div
             className={
@@ -107,15 +110,18 @@ function Createorder() {
         </div>
         {/*###################### body ######################################################* */}
 
-        {/*------- sub heading--------* */}
-        <div className="container m-0 p-0 modal_order">
+<div className="d-flex">
+  <div>
+     {/*------- sub heading--------* */}
+     <div className="container m-0 p-0 modal_order">
           <div className="row  m-0 p-0  ">
             <div className="col p-0 m-0 ">
               <div
-                className="d-flex  order_content"
+                className="d-flex  order_content justify-content-between align-items-center"
                 
               >
-                <div className="px-2 py-1">
+                <div className="d-flex ">
+                <div className="">
                   <input
                     class="form-check-input d-none"
                     type="radio"
@@ -136,7 +142,7 @@ function Createorder() {
                     Regular
                   </label>
                 </div>
-                {form.exchange==='NSE'?<div className="px-2 py-1">
+                {form.exchange==='NSE'?<div className="">
                   <input
                     class="form-check-input d-none"
                     type="radio"
@@ -157,7 +163,7 @@ function Createorder() {
                     Cover
                   </label>
                 </div>:null}
-                <div className="px-2 py-1">
+                <div className="  ">
                   <input
                     class="form-check-input d-none"
                     type="radio"
@@ -178,7 +184,7 @@ function Createorder() {
                     AMO
                   </label>
                 </div>
-                <div className="px-2 py-1">
+                <div className="">
                   <input
                     class="form-check-input d-none"
                     type="radio"
@@ -199,8 +205,12 @@ function Createorder() {
                     Iceberg
                   </label>
                 </div>
+                </div>
+                <div><a onClick={()=>settags(!tags)} className=" click order_link p-3" >tags</a></div>
               </div>
+            
             </div>
+            
           </div>
         </div>
 
@@ -246,13 +256,13 @@ function Createorder() {
             </div>
             <div className="col-4 position-relative">
               <label className="position-absolute label_position bg-white px-1">Price</label>
-              <input type="number" className={form.market_limit!=='limit'?"biginput diablebg":"biginput "} disabled={form.market_limit!=='limit' } onChange={(e)=>setform({...form,price:e.target.value})} />
+              <input type="number" className={form.market_limit!=='limit' && form.sl!='SL'?"biginput diablebg":"biginput "} disabled={form.market_limit!=='limit' && form.sl!='SL'} onChange={(e)=>setform({...form,price:e.target.value})} />
             </div>
             <div className="col-4 position-relative ">
               <label className="position-absolute label_position ">
-                Trigger price
+                {form.order_type==='cover'?'Stoploss trigger':'Trigger price'}
               </label>
-              <input disabled={form.sl==='SL' ||form.sl==='SL-M' ?false:true} type="number" className={form.sl==='SL' ||form.sl==='SL-M' ?"biginput ":"biginput diablebg"} onChange={(e)=>setform({...form,trigger_price:e.target.value})} />
+              <input disabled={form.sl==='SL' ||form.sl==='SL-M' || form.order_type==='cover' ?false:true} type="number" className={form.sl==='SL' ||form.sl==='SL-M' || form.order_type==='cover' ?"biginput ":"biginput diablebg"} onChange={(e)=>setform({...form,trigger_price:e.target.value})} />
             </div>
           </div>
 
@@ -285,6 +295,7 @@ function Createorder() {
             <div className="col-4 d-flex justify-content-end">
               <div className="d-flex align-items-center me-2">
                 <input
+                disabled={form.order_type==='cover'}
                   className="me-1"
                   type="radio"
                   value="SL-M"
@@ -296,6 +307,7 @@ function Createorder() {
               <div className="d-flex align-items-center">
                 <input
                   className="me-1"
+                  disabled={form.order_type==='cover'}
                   type="radio"
                   value="SL"
                   name="sl"
@@ -317,6 +329,7 @@ function Createorder() {
               <div className="lighttext mt-2">1 qty. per leg</div>
             </div>
           </div>:null}
+          
 
           {/*------------------- show hide button---------------* */}
 
@@ -409,12 +422,13 @@ function Createorder() {
 
         <div className="row  modal_order align-items-center py-2 px-3">
           <div className="col-6">
-            Margin <span className="text-primary">₹2,210.00</span> (5x) Charges{" "}
-            <span className="text-primary">₹4.35</span>{" "}
+            Margin <span className="text-primary">₹2,210.00</span> (5x) Charges
+            <span className="text-primary">₹4.35</span> 
           </div>
           <div className="col-6 text-end">
             <button
-              type="button"
+              type="submit"
+              
               class={
                 toggle
                   ? "btn btn-primary px-4 py-2 "
@@ -423,12 +437,19 @@ function Createorder() {
             >
               {toggle ? "Buy" : "Sell"}
             </button>
-            <button type="button" class="btn btn-outline-secondary py-2 ms-2 ">
+            <button type="button"  class="btn btn-outline-secondary py-2 ms-2 ">
               Cancel
             </button>
           </div>
         </div>
-      </div>
+
+  </div>{tags?<div className="bg-white border-start" style={{width:"125px"}}>
+    fhkjdgfldkkh
+  </div>:null}
+  
+</div>
+             </div>
+    
     </>
   );
 }
