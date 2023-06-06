@@ -11,13 +11,16 @@ import Funds from './component/Funds'
 
 
 import Orders from './component/Orders'
-import Createorder from './component/Createorder'
+import Createorder from './component/global_component/Createorder'
+import Gtt from './component/ordercomponent/Gtt'
+import Gtt_modal from './component/global_component/Gtt_modal'
 
 
 function App() {
   return (
     <>
-       <Createorder/>
+       {/* <Createorder/> */}
+       <Gtt_modal show={true}/>
     <header className='sticky-top bg-white bg-white'>
     <Header/>
     </header>

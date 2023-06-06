@@ -1137,15 +1137,15 @@ function Dashboard() {
           <div className="col-6">
             <div className=" secondary-title mb-4 ">
               <span className="me-3">
-                <i className="bi bi-pie-chart"></i>
+              <i class="bi bi-droplet"></i>
               </span>
-              <span>Equity</span>
+              <span>Commodity</span>
             </div>
             <div>
               <div className="row">
                 <div className="col-5">
                   <div className="border-end">
-                  <div className="bigvalue">-340.9</div>
+                  <div className="bigvalue">0</div>
                   <div className="label">Margin available</div>
                 </div>
                 </div>
@@ -1167,8 +1167,8 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className="d-flex bd-highlight">
-        <div className="flex-fill bd-highlight pe-5">
+      <div className="d-flex  mt-2 mt-4">
+        <div className="w-100 mr-3 ">
           <div className="secondary-title my-3">
             <span className="me-3">
               <i className="bi bi-briefcase"></i>
@@ -1178,7 +1178,7 @@ function Dashboard() {
           <div className="row">
             <div className="col-6 border-end">
               <div className="bigvalue">-3.41k </div>
-              <div className="label">Margin Available</div>
+              <div className="label">P&L</div>
             </div>
             <div className="col-6 p-3 ps-5  ">
               <div>
@@ -1195,7 +1195,7 @@ function Dashboard() {
             <Holdingchart/>
           </div>
         </div>
-        <div className="flex-fill bd-highlight">
+        <div className="">
           <img className="banner " src="./image/add.png" />
         </div>
       </div>

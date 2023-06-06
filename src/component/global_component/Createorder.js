@@ -390,7 +390,7 @@ function Createorder() {
 
           {/*---------------------- GTT option ---------------------- */}
 
-       {form.intra_long==='longterm'?   <div className="row border-top border-bottom py-1">
+       {form.intra_long==='longterm' && form.order_type==='regular'?   <div className="row border-top border-bottom py-1">
             <div className="col-1 p-2">
               <img
                 src="https://kite.zerodha.com/static/images/gtt-logo.svg"
