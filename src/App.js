@@ -11,23 +11,23 @@ import Funds from './component/Funds'
 
 
 import Orders from './component/Orders'
-import Createorder from './component/global_component/Createorder'
-import Gtt from './component/ordercomponent/Gtt'
-import Gtt_modal from './component/global_component/Gtt_modal'
+// import Createorder from './component/global_component/Createorder'
+// import Gtt from './component/ordercomponent/Gtt'
+// import Gttmodal from './component/global_component/Gttmodal'
 
 
 function App() {
   return (
     <>
        {/* <Createorder/> */}
-       <Gtt_modal show={true}/>
+       {/* <Gttmodal show={true}/> */}
     <header className='sticky-top bg-white bg-white'>
     <Header/>
     </header>
     <main>    
   
       
-      <div className='wrapper d-flex mx-5 ' >
+      <div className='wrapper d-flex mx-xxl-5 ' >
         <div className='leftside p-0 shadow-sm m-0  '>
 <Sidebar/>
         </div>

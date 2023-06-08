@@ -1,14 +1,16 @@
 import React from 'react'
 
-function Gtt_modal(props) {
+function Gttmodal(props) {
   return (
     <>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
       Launch demo modal
     </button>
     
     
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    {props.show===false?<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+      </div>:
+    <div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" style={{display:"block"}}>
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="p-3 border-bottom ">
@@ -18,6 +20,7 @@ function Gtt_modal(props) {
               <img
                 src="https://kite.zerodha.com/static/images/gtt-logo.svg"
                 className=" w-25   "
+                alt='gtt'
               /></div>
           </div>
           
@@ -216,11 +219,11 @@ function Gtt_modal(props) {
           </div>
         </div>
       </div>
-    </div>
+    </div>}
     
     
     </>
   )
 }
 
-export default Gtt_modal
+export default Gttmodal

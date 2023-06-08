@@ -13,7 +13,7 @@ function Sidebar() {
     
     let id = document.getElementsByClassName(`showmarketdepth${i}`)[0].style.display;
   
-    if(id=="none"){
+    if(id==="none"){
       document.getElementsByClassName(`showmarketdepth${i}`)[0].style.display="block"
     }else{
       document.getElementsByClassName(`showmarketdepth${i}`)[0].style.display="none"
@@ -246,6 +246,8 @@ let data =
 ]
 
 
+
+
 useEffect(()=>{
   let length=0
 
@@ -265,6 +267,7 @@ setpagelength(length)
     break;
    }
   }
+  
 },[])
    
 const onleave=(item,i)=>{
@@ -280,6 +283,44 @@ const onleave=(item,i)=>{
  const slectedpage =(el)=>{
   setpage(el)
  }
+ const [dragItemIndex, setDragItemIndex] = useState();
+ const [dragOverItemIndex, setDragOverItemIndex] = useState();
+
+   
+
+  const handleDragStart = index => {
+    setDragItemIndex(index)
+  };
+
+  const handleDragOver = event => {
+    event.preventDefault();
+  }
+
+  const handleDrop = (index) => {
+
+    
+    
+    const _sports = [...page.items];
+    
+    const dragItem = _sports.splice(dragItemIndex, 1);
+    
+    
+     _sports.splice(dragOverItemIndex, 0, dragItem[0]);
+    
+    setpage({id: 430051044, name: 'today', items:_sports});
+    
+  }
+
+  const handleDragEnter = index => {
+    setDragOverItemIndex(index)
+  }
+
+  
+
+  const handleDragEnd = event => {
+    setDragItemIndex(undefined);
+    setDragOverItemIndex(undefined);
+  }
 
 
   return (
@@ -299,8 +340,19 @@ const onleave=(item,i)=>{
      
       
       return<>
-      <div key={i} onMouseLeave={()=>onleave(ele,i)}  onMouseEnter={()=>onenter(ele,i)} className={`sidebardata${i} sidebarhover   position-relative d-flex justify-content-between  padding12 `} >
+      <div
+       draggable
+       onDragStart={() => handleDragStart(i)}
+       onDragOver={handleDragOver}
+       onDrop={() => handleDrop(i)}
+       onDragEnter={() => handleDragEnter(i)}
+       onDragEnd={handleDragEnd}
+        key={i} onMouseLeave={()=>onleave(ele,i)}  onMouseEnter={()=>onenter(ele,i)}
         
+        // className={`sidebardata${i} sidebarhover   position-relative   padding12 `} 
+            className={dragOverItemIndex === i ? `list-item next-position sidebardata${i} sidebarhover    position-relative   padding12` : ` sidebardata${i} sidebarhover   position-relative   padding12 list-item`}>
+        
+        <div className='d-flex d-flex justify-content-between'>
         <div className='text-success' >{ele.tradingsymbol}</div>
         <div className='d-flex  '>
           <div>
@@ -316,17 +368,16 @@ const onleave=(item,i)=>{
         </div>
         <div key={i} className={` hoverbutton${i} hidemenubutton end-0 top-8  showmenu   position-absolute`}>
             <button className=' hoverbuttondisign mx-1 bg-primary border-primary text-white' style={{backgroundColor:"#4184f3"}} >B</button>
-            <button className='hoverbuttondisign orange text-white border-danger ' >S</button>
+            <button className='hoverbuttondisign  text-white bg-red border-red ' >S</button>
             <button className='hoverbuttondisign bgwhite  mx-1' onClick={()=>showmarketdepth(ele,i)}  ><i className="bi bi-text-center"></i></button>
             <button className='hoverbuttondisign bgwhite ' ><i className="bi bi-graph-up-arrow"></i></button>
             <button className='hoverbuttondisign bgwhite ms-1' ><i className="bi bi-trash3"></i></button>
             <button className='hoverbuttondisign bgwhite  mx-1' ><i className="bi bi-three-dots"></i></button>
             
         </div>
+        </div>
 
-       
-      </div>
-      <div   className={`showmarketdepth${i} px-4 smalltext shadow-sm `} style={{display:"none"}} >
+        <div   className={`showmarketdepth${i}  smalltext  `} style={{display:"none"}} >
           <div className='row border-bottom '>
             <div className='col-6'>
             <table class="table-borderless w-100 mb-2">
@@ -423,29 +474,33 @@ const onleave=(item,i)=>{
           <div className='row text-center'>
             <div className='col text-primary py-2'><i class="bi bi-chevron-down"></i>  View 20 depth</div></div>
           <div className='row border-top py-3 '>
-          <div className='row m-0 p-0 '>
-            <div className='col-6  '><div className='row  '><div className='col-6  ps-0 lighttext '>Open</div><div className='col-6   text-end'>555.5</div></div></div>
+          <div className='row '>
+            <div className='col-6  '><div className='row  '><div className='col-6   lighttext '>Open</div><div className='col-6   text-end'>555.5</div></div></div>
             <div className='col-6 '><div className='row '><div className='col-6   lighttext'>High</div><div className='col-6  pe-0 text-end'>559.5</div></div></div>
           </div>
-          <div className='row m-0 p-0'>
-          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>Low</div><div className='col-6   text-end'>555.5</div></div></div>
+          <div className='row '>
+          <div className='col-6 '><div className='row'><div className='col-6   lighttext '>Low</div><div className='col-6   text-end'>555.5</div></div></div>
           <div className='col-6 '><div className='row'><div className='col-6   lighttext '>Prev. Close</div><div className='col-6  pe-0 text-end'>555.5</div></div></div>
           </div>
-          <div className='row m-0 p-0'>
-          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>volume</div><div className='col-6   text-end'>N/A</div></div></div>
+          <div className='row '>
+          <div className='col-6 '><div className='row'><div className='col-6   lighttext '>volume</div><div className='col-6   text-end'>N/A</div></div></div>
           <div className='col-6 '><div className='row'><div className='col-6   lighttext '>Avg. price</div><div className='col-6  pe-0 text-end'>N/A</div></div></div>
           </div>
-          <div className='row m-0 p-0'>
-          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>LTQ</div><div className='col-6   text-end'>N/A</div></div></div>
+          <div className='row '>
+          <div className='col-6 '><div className='row'><div className='col-6   lighttext '>LTQ</div><div className='col-6   text-end'>N/A</div></div></div>
           <div className='col-6 '><div className='row'><div className='col-3   lighttext '>LTT</div><div className='col pe-0 w-100 text-end'>2023-05-26 15:59:37</div></div></div>
           </div>
-          <div className='row m-0 p-0'>
-          <div className='col-6 '><div className='row'><div className='col-6  ps-0 lighttext '>Lower circuit</div><div className='col-6   text-end'>555.5</div></div></div>
+          <div className='row'>
+          <div className='col-6 '><div className='row'><div className='col-6   lighttext '>Lower circuit</div><div className='col-6   text-end'>555.5</div></div></div>
           <div className='col-6 '><div className='row'><div className='col-7   lighttext '>Upper circuit</div><div className='col-5  pe-0 text-end'>555.5</div></div></div>
           </div>
 
           </div>
         </div>
+
+       
+      </div>
+      
         
         
       </>
@@ -463,7 +518,7 @@ const onleave=(item,i)=>{
 
        <ul >
         {data.map((el,i)=>{
-          return <li key={i} className={page.name==el.name? 'activepage sidebarpagination pe-auto opacity65':'sidebarpagination pe-auto opacity65'} onClick={()=>slectedpage(el)} >{i+1}</li>
+          return <li key={i} className={page.name===el.name? 'activepage sidebarpagination pe-auto opacity65':'sidebarpagination pe-auto opacity65'} onClick={()=>slectedpage(el)} >{i+1}</li>
         })}
           <li className='setting'><span className='setting-btn'><i className="bi bi-gear"></i></span></li>
         </ul>

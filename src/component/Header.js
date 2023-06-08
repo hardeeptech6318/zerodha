@@ -1,11 +1,11 @@
 import React from "react";
 import "../App.css";
-import { Link,NavLink } from "react-router-dom";
-import { BellOutlined } from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
+
 
 function Header() {
   return (
-    <div className=" border-bottom px-5 shadow-sm sticky-top niftyheader">
+    <div className=" border-bottom px-xxl-5 shadow-sm sticky-top niftyheader">
       <div className="row m-0 p-0 align-items-center m-auto  ">
         <div className="leftside m-0    border-end  ">
           <div className="d-flex align-items-center  fw-bold height60">  
@@ -27,6 +27,7 @@ function Header() {
               <img
                 className="logo mx-3"
                 src="https://kite.zerodha.com/static/images/kite-logo.svg"
+                alt="logo"
               />
             </NavLink>
             <div className="d-flex w-100 justify-content-end align-items-center border-end py-2">

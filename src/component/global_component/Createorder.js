@@ -68,9 +68,9 @@ function Createorder() {
               Buy TORNTPOWER <small>NSE</small> x 1 Qty
             </div>
             <div className="col-6 ">
-              <div class="form-check form-switch form-check-reverse  ">
+              <div className="form-check form-switch form-check-reverse  ">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   value="buy"
                   onChange={(e) => settoggle(!toggle)}
                   type="checkbox"
@@ -123,7 +123,7 @@ function Createorder() {
                 <div className="d-flex ">
                 <div className="">
                   <input
-                    class="form-check-input d-none"
+                    className="form-check-input d-none"
                     type="radio"
                     name="form"
                     id="regular"
@@ -132,7 +132,7 @@ function Createorder() {
                     onChange={(e) => setform({...form,order_type:e.target.value})}
                   />
                   <label
-                    class={
+                    className={
                       form.order_type == "regular"
                         ? "form-check-label click lighttext order_header checked"
                         : "form-check-label click lighttext order_header "
@@ -144,7 +144,7 @@ function Createorder() {
                 </div>
                 {form.exchange==='NSE'?<div className="">
                   <input
-                    class="form-check-input d-none"
+                    className="form-check-input d-none"
                     type="radio"
                     name="form"
                     id="cover"
@@ -153,7 +153,7 @@ function Createorder() {
                     onChange={(e) => setform({...form,order_type:e.target.value})}
                   />
                   <label
-                    class={
+                    className={
                       form.order_type == "cover"
                         ? "form-check-label click lighttext order_header checked "
                         : "form-check-label click lighttext order_header"
@@ -165,7 +165,7 @@ function Createorder() {
                 </div>:null}
                 <div className="  ">
                   <input
-                    class="form-check-input d-none"
+                    className="form-check-input d-none"
                     type="radio"
                     name="form"
                     id="amo"
@@ -174,7 +174,7 @@ function Createorder() {
                     onChange={(e) => setform({...form,order_type:e.target.value})}
                   />
                   <label
-                    class={
+                    className={
                       form.order_type == "amo"
                         ? "form-check-label click lighttext order_header checked"
                         : "form-check-label click lighttext order_header"
@@ -186,7 +186,7 @@ function Createorder() {
                 </div>
                 <div className="">
                   <input
-                    class="form-check-input d-none"
+                    className="form-check-input d-none"
                     type="radio"
                     name="form"
                     id="iceberg"
@@ -195,7 +195,7 @@ function Createorder() {
                     onChange={(e) => setform({...form,order_type:e.target.value})}
                   />
                   <label
-                    class={
+                    className={
                       form.order_type== "iceberg"
                         ? "form-check-label click lighttext order_header checked"
                         : "form-check-label click lighttext order_header"
@@ -339,9 +339,9 @@ function Createorder() {
                 <span>{hide ? "Show option" : "Hide option"}</span>
                 <span className="ms-2">
                   {hide ? (
-                    <i class="bi bi-chevron-down"></i>
+                    <i className="bi bi-chevron-down"></i>
                   ) : (
-                    <i class="bi bi-chevron-up"></i>
+                    <i className="bi bi-chevron-up"></i>
                   )}
                 </span>
               </a>
@@ -429,7 +429,7 @@ function Createorder() {
             <button
               type="submit"
               
-              class={
+              className={
                 toggle
                   ? "btn btn-primary px-4 py-2 "
                   : "btn  btn-danger bg-red text-white px-4 py-2"
@@ -437,7 +437,7 @@ function Createorder() {
             >
               {toggle ? "Buy" : "Sell"}
             </button>
-            <button type="button"  class="btn btn-outline-secondary py-2 ms-2 ">
+            <button type="button"  className="btn btn-outline-secondary py-2 ms-2 ">
               Cancel
             </button>
           </div>

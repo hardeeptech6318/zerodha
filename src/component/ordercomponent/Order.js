@@ -314,12 +314,12 @@ const showtrade =()=>{
 
                   return <tr key={i} className=" border-top">
                   <td  scope="row" className=" tablepaddinghold">{ele.order_timestamp}</td>
-                  <td  scope="row" ><span class={ele.transaction_type=="BUY"?"buybadge ":'sellbadge'}>{ele.transaction_type}</span></td>
+                  <td  scope="row" ><span className={ele.transaction_type=="BUY"?"buybadge ":'sellbadge'}>{ele.transaction_type}</span></td>
                   <td  scope="row" >{ele.tradingsymbol}<span className='headerdim opacity75 ms-1'>{ele.exchange}</span></td>
                   <td  scope="row" >{ele.product}</td>
                   <td  scope="row">{ele.quantity}/{ele.filled_quantity}</td>
                   <td  scope="row" className='text-end border-end' >{ele.trigger_price!=0?<>{ele.average_price}/{ele.trigger_price}</>:ele.average_price}</td>
-                  <td  scope="row" ><span class="completebadge">{ele.status}</span></td>
+                  <td  scope="row" ><span className="completebadge">{ele.status}</span></td>
 
                   </tr>
                   })}
@@ -338,7 +338,7 @@ const showtrade =()=>{
 
                   <div className='d-flex justify-content-between  '>
                   <div>
-                  <h3 style={{fontSize:"1.125rem"}} >Trades <button onClick={showtrade} className='btn'>{trades.length>0?<i class="bi bi-chevron-up"></i>:<i class="bi bi-chevron-down"></i>}</button> {trades.length>0?<>({trades.length})</>:null}</h3>
+                  <h3 style={{fontSize:"1.125rem"}} >Trades <button onClick={showtrade} className='btn'>{trades.length>0?<i className="bi bi-chevron-up"></i>:<i className="bi bi-chevron-down"></i>}</button> {trades.length>0?<>({trades.length})</>:null}</h3>
                   </div> 
 
                  
@@ -406,7 +406,7 @@ const showtrade =()=>{
               </div>
   :<div className='orderpage d-flex justify-content-center align-items-center flex-column my-5'>
                 <div className='orderjournal '>
-                <i class="bi bi-journal-bookmark"></i>
+                <i className="bi bi-journal-bookmark"></i>
                 </div>
                 <div className=''>You haven't placed any orders today</div>
                 <div className='my-4'>

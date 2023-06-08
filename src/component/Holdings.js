@@ -617,7 +617,7 @@ return <tr key={i} className=" border-top text-end">
     
    
     <tr  className="p-2 border-top">
-      <td colspan="8" ></td>
+      <td colSpan="8" ></td>
     </tr>
   </tbody>
 </table>

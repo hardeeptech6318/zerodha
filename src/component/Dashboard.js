@@ -1137,7 +1137,7 @@ function Dashboard() {
           <div className="col-6">
             <div className=" secondary-title mb-4 ">
               <span className="me-3">
-              <i class="bi bi-droplet"></i>
+              <i className="bi bi-droplet"></i>
               </span>
               <span>Commodity</span>
             </div>
