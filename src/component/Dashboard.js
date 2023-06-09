@@ -1005,20 +1005,22 @@ function Dashboard() {
   ];
   let configurechart = [];
   data.forEach((element, i) => {
-    configurechart.push([element.timestamp.slice(0, 10), element.close_price]);
+    configurechart.push([
+      new Date(element.timestamp).getTime(),
+      element.close_price,
+    ]);
   });
 
   let overviewchartOptions = {
     plotLines: [
       {
         color: "#FF0000",
-        width: 2,
-        value: 0.8 * 415, // Need to set this probably as a var.
       },
     ],
 
     chart: {
-      type: "scatter",
+      type: "spline",
+
       height: "190px",
     },
     legend: {
@@ -1030,13 +1032,6 @@ function Dashboard() {
 
       symbolRadius: 0,
     },
-    tooltip: {
-      style: {
-        color: "white",
-        fontWeight: "bold",
-        backgroundColor: "#000000",
-      },
-    },
 
     credits: {
       enabled: false,
@@ -1045,7 +1040,7 @@ function Dashboard() {
       text: "",
     },
     yAxis: {
-      tickInterval: 1,
+      tickInterval: 30,
       visible: true,
       title: {
         text: null,
@@ -1056,29 +1051,20 @@ function Dashboard() {
     },
 
     xAxis: {
-      gridLineWidth: 0,
-      minorGridLineWidth: 0,
-      lineColor: "transparent",
-      tickLength: 0,
-      type: "datetime",
-      tickInterval: 30,
       labels: {
-        formatter: function () {
-          return Highcharts.dateFormat("%b", this.value);
-        },
-        style: {
-          fontSize: ".75rem",
-          color: "#9b9b9b",
-          gridLineWidth: 0,
-          minorGridLineWidth: 0,
-          lineColor: "hidden",
-          tickLength: 0,
-        },
+        format: "{value:%b-%Y}",
       },
+      tickLength: 0,
     },
 
-    time: {
-      timezone: "Asia/Kolkata",
+    plotOptions: {
+      spline: {
+        states: {
+          hover: {
+            lineWidth: 2,
+          },
+        },
+      },
     },
 
     series: [
@@ -1092,11 +1078,8 @@ function Dashboard() {
         lineWidth: 3,
       },
     ],
-    title: {
-      text: "",
-      align: "left",
-    },
   };
+
 
   return (
     <div className="allpagepadding" >

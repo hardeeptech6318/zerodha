@@ -274,7 +274,7 @@ const onleave=(item,i)=>{
   let id = document.getElementsByClassName(`hoverbutton${i}`);
   id[0].classList.add("hidemenubutton");
 }
-        
+// document.activeElement === searchInput.current
  const onenter=(item,i)=>{
   let id = document.getElementsByClassName(`hoverbutton${i}`);
   id[0].classList.remove("hidemenubutton");
@@ -282,6 +282,7 @@ const onleave=(item,i)=>{
 
  const slectedpage =(el)=>{
   setpage(el)
+  document.getElementsByClassName('showallmarketdepth')[0].style.display='none'
  }
  const [dragItemIndex, setDragItemIndex] = useState();
  const [dragOverItemIndex, setDragOverItemIndex] = useState();
@@ -366,7 +367,7 @@ const onleave=(item,i)=>{
             <span className='ms-4 me-1 text-danger'>529.6</span>
           </div>
         </div>
-        <div key={i} className={` hoverbutton${i} hidemenubutton end-0 top-8  showmenu   position-absolute`}>
+        <div key={i} className={` hoverbutton${i}  hidemenubutton end-0 top-8  showmenu   position-absolute`}>
             <button className=' hoverbuttondisign mx-1 bg-primary border-primary text-white' style={{backgroundColor:"#4184f3"}} >B</button>
             <button className='hoverbuttondisign  text-white bg-red border-red ' >S</button>
             <button className='hoverbuttondisign bgwhite  mx-1' onClick={()=>showmarketdepth(ele,i)}  ><i className="bi bi-text-center"></i></button>
@@ -377,7 +378,7 @@ const onleave=(item,i)=>{
         </div>
         </div>
 
-        <div   className={`showmarketdepth${i}  smalltext  `} style={{display:"none"}} >
+        <div   className={`showmarketdepth${i} showallmarketdepth smalltext  `} style={{display:"none"}} >
           <div className='row border-bottom '>
             <div className='col-6'>
             <table class="table-borderless w-100 mb-2">

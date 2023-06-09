@@ -41,6 +41,10 @@ a,
   font-size: 0.75rem;
 }
 
+.display-none{
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: #444;
@@ -63,6 +67,12 @@ th,
 .smallinput {
   color: #9b9b9b;
 }
+
+.loginimage{
+  height: auto;
+  width: 12px;
+}
+
 
 /* .leftside {
   width: 30%;
@@ -696,4 +706,50 @@ table thead th {
 
 .next-position {
   opacity: 0.2;
+}
+.loginpage{
+  display: flex;
+  align-items: center;
+  /* margin-top: auto; */
+  /* margin-bottom: auto; */
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  
+}
+
+.logininput{
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 10px 15px;
+  color: #444;
+  width: 100%;
+  /* font-size: 16px; */
+}
+
+.loginlabel{
+  position: absolute;
+  font-size: 0.65rem;
+  top: -13px;
+  left: 8px;
+  background-color: white;
+  padding: 5px;
+  display: block!important;
+
+}
+
+
+.logininput ::placeholder{
+  font-size: 50px;
+}
+
+.loginpadding{
+  padding: 40px;
+  width: 360px;
+}
+
+.loginlogo{
+  max-width: 60px;
+
 }

@@ -11,6 +11,7 @@ import Funds from './component/Funds'
 
 
 import Orders from './component/Orders'
+import Login from './component/Login'
 // import Createorder from './component/global_component/Createorder'
 // import Gtt from './component/ordercomponent/Gtt'
 // import Gttmodal from './component/global_component/Gttmodal'
@@ -19,6 +20,7 @@ import Orders from './component/Orders'
 function App() {
   return (
     <>
+    <Login/>
        {/* <Createorder/> */}
        {/* <Gttmodal show={true}/> */}
     <header className='sticky-top bg-white bg-white'>
@@ -34,6 +36,7 @@ function App() {
         <div className='rightside   shadow-sm '  >
         <Routes>  
       <Route path="/" element={<Dashboard/>} />
+      
       <Route path="/orders/*" element={<Orders/>} />
       
       <Route path="/holdings" element={<Holdings />} />
