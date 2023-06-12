@@ -282,7 +282,11 @@ const onleave=(item,i)=>{
 
  const slectedpage =(el)=>{
   setpage(el)
-  document.getElementsByClassName('showallmarketdepth')[0].style.display='none'
+  let id = document.getElementsByClassName('showallmarketdepth')[0]
+  if(id){
+    document.getElementsByClassName('showallmarketdepth')[0].style.display='none'
+  }
+  
  }
  const [dragItemIndex, setDragItemIndex] = useState();
  const [dragOverItemIndex, setDragOverItemIndex] = useState();
@@ -351,7 +355,8 @@ const onleave=(item,i)=>{
         key={i} onMouseLeave={()=>onleave(ele,i)}  onMouseEnter={()=>onenter(ele,i)}
         
         // className={`sidebardata${i} sidebarhover   position-relative   padding12 `} 
-            className={dragOverItemIndex === i ? `list-item next-position sidebardata${i} sidebarhover    position-relative   padding12` : ` sidebardata${i} sidebarhover   position-relative   padding12 list-item`}>
+            className={dragOverItemIndex === i ? `list-item next-position sidebardata${i} sidebarhover    position-relative   padding12` : ` sidebardata${i} sidebarhover   position-relative   padding12 list-item`}
+            >
         
         <div className='d-flex d-flex justify-content-between'>
         <div className='text-success' >{ele.tradingsymbol}</div>

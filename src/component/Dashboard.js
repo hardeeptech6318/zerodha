@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import Highcharts, { chart } from "highcharts";
+import Highcharts, { chart, color } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import addTreemapModule from "highcharts/modules/treemap";
 import Holdingchart from "./Holdingchart";
@@ -1019,7 +1019,7 @@ function Dashboard() {
     ],
 
     chart: {
-      type: "spline",
+      type: "spline", 
 
       height: "190px",
     },
@@ -1053,6 +1053,13 @@ function Dashboard() {
     xAxis: {
       labels: {
         format: "{value:%b-%Y}",
+        style:{
+          
+          fontSize:"0.75rem",
+          color:"#9b9b9b",
+          
+          
+        }
       },
       tickLength: 0,
     },

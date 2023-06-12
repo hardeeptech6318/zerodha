@@ -12,7 +12,7 @@ import Funds from './component/Funds'
 
 import Orders from './component/Orders'
 import Login from './component/Login'
-// import Createorder from './component/global_component/Createorder'
+import Createorder from './component/global_component/Createorder'
 // import Gtt from './component/ordercomponent/Gtt'
 // import Gttmodal from './component/global_component/Gttmodal'
 
@@ -20,7 +20,7 @@ import Login from './component/Login'
 function App() {
   return (
     <>
-    <Login/>
+    {/* <Login/> */}
        {/* <Createorder/> */}
        {/* <Gttmodal show={true}/> */}
     <header className='sticky-top bg-white bg-white'>

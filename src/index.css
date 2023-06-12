@@ -235,9 +235,18 @@ select:focus,
   outline: none;
 }
 
+.dropdown-menu.show{
+  transform: translate3d(0px, 41px, 0px)!important;
+  border-radius: 0px;
+  /* top:105%; */
+  /* right: 15px; */
+  border-width: 0 1px 1px 1px  ;
+  border-color: #eee;
+}
+
 .avatar {
-  width: 25px;
-  height: 25px;
+  /* width: 25px; */
+  /* height: 25px; */
   border-radius: 50%;
   text-align: center;
   vertical-align: middle;
@@ -245,7 +254,8 @@ select:focus,
   font-size: 9px;
   font-weight: 300;
   color: rgb(63, 81, 181);
-  line-height: 26px;
+  /* line-height: 26px; */
+  padding: 5px;
 }
 
 /*------------sidebar--------------------------*/
@@ -717,6 +727,10 @@ table thead th {
   width: 100%;
   flex-direction: column;
   
+}
+
+.padding15{
+  padding: 10px 15px;
 }
 
 .logininput{
