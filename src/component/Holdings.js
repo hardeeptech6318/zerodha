@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from "react";
 import Holdingchart from "./Holdingchart";
 import Tablesort from './commonfunction/Tablesort';
+import Menu  from "./global_component/Menu";
 
 
 function Holdings() {
@@ -603,8 +604,8 @@ setcalculate({
 
 
 
-return <tr key={i} className=" border-top text-end">
-<td  scope="row" className="border-end tablepaddinghold text-start" >{ele.tradingsymbol}</td>
+return <tr key={i} className=" border-top text-end menutr ">
+<td  scope="row" className="border-end tablepaddinghold text-start d-flex justify-content-between" ><span>{ele.tradingsymbol}</span> <Menu/> </td>
 <td>{ele.quantity}</td>
 <td>{ele.average_price.toFixed(2)}</td>
 <td className="border-end" >{ele.last_price.toFixed(2)}</td>

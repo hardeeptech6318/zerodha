@@ -2,7 +2,7 @@ import React from 'react'
 import { Link,Outlet ,Routes,Route ,NavLink   } from 'react-router-dom'
 import Gtt from '../component/ordercomponent/Gtt'
 import Basket from './ordercomponent/Basket'
-import Order from './ordercomponent/Order'
+import Order from "./ordercomponent/Order"
 
 import Ipo from './ordercomponent/Ipo'
 import Auctions from './ordercomponent/Auctions'

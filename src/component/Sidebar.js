@@ -329,7 +329,7 @@ const onleave=(item,i)=>{
 
 
   return (
-    <div className='m-0 p-0 sidebartextsize  '  >
+    <div className='m-0 p-0 sidebartextsize  '   >
       <div className='searchsidebar d-flex' >
       <label className="searchicon  p-3  " ><i className=" bi bi-search"></i></label>
   <input className="sidebarsearch " placeholder="Search eg:infy,bse,nifty fut, nifty weekly,gold mcx" type="text" />

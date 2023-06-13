@@ -9,19 +9,20 @@ body {
   color: #444;
 }
 
-.table{
+.table {
   color: #444;
 }
 
-.text-red{
-  color:#ff5722 ;
+.text-red {
+  color: #ff5722;
 }
 
-.leftside{
-  width:30%
+.leftside {
+  width: 30%;
 }
 
-ul,.sidebartextsize{
+ul,
+.sidebartextsize {
   width: 28%;
 }
 
@@ -41,7 +42,7 @@ a,
   font-size: 0.75rem;
 }
 
-.display-none{
+.display-none {
   display: none;
 }
 
@@ -68,11 +69,10 @@ th,
   color: #9b9b9b;
 }
 
-.loginimage{
+.loginimage {
   height: auto;
   width: 12px;
 }
-
 
 /* .leftside {
   width: 30%;
@@ -215,8 +215,8 @@ a:hover,
   color: #ff5722;
 }
 
-.border-red{
-  border: 1px solid #ff5722!important ;
+.border-red {
+  border: 1px solid #ff5722 !important ;
 }
 
 .headerright {
@@ -235,12 +235,12 @@ select:focus,
   outline: none;
 }
 
-.dropdown-menu.show{
-  transform: translate3d(0px, 41px, 0px)!important;
+.dropdown-menu.show {
+  transform: translate3d(0px, 41px, 0px) !important;
   border-radius: 0px;
   /* top:105%; */
   /* right: 15px; */
-  border-width: 0 1px 1px 1px  ;
+  border-width: 0 1px 1px 1px;
   border-color: #eee;
 }
 
@@ -334,6 +334,22 @@ select:focus,
   }
 }
 
+.menu {
+  visibility: hidden;
+  color: #4184f3;
+  line-height: 1;
+  border: 1px solid #4184f3;
+  font-size: 1rem;
+  background-color: white;
+  border-radius: 2px;
+  font-weight: bolder;
+  padding: 0px 9px;
+}
+
+.menutr:hover .menu {
+  visibility: visible;
+}
+
 .showmenu {
   top: 9px;
   animation: fadeIn 200ms;
@@ -347,6 +363,7 @@ select:focus,
   z-index: 1;
   overflow-y: auto;
   overflow-x: hidden;
+  font-size: 0.8125rem;
 }
 
 .padding12 {
@@ -709,7 +726,6 @@ table thead th {
   background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
-
 .list-item {
   cursor: grab;
 }
@@ -717,7 +733,7 @@ table thead th {
 .next-position {
   opacity: 0.2;
 }
-.loginpage{
+.loginpage {
   display: flex;
   align-items: center;
   /* margin-top: auto; */
@@ -726,14 +742,13 @@ table thead th {
   height: 100vh;
   width: 100%;
   flex-direction: column;
-  
 }
 
-.padding15{
+.padding15 {
   padding: 10px 15px;
 }
 
-.logininput{
+.logininput {
   border: 1px solid #eee;
   border-radius: 3px;
   padding: 10px 15px;
@@ -742,28 +757,25 @@ table thead th {
   /* font-size: 16px; */
 }
 
-.loginlabel{
+.loginlabel {
   position: absolute;
   font-size: 0.65rem;
   top: -13px;
   left: 8px;
   background-color: white;
   padding: 5px;
-  display: block!important;
-
+  display: block !important;
 }
 
-
-.logininput ::placeholder{
+.logininput ::placeholder {
   font-size: 50px;
 }
 
-.loginpadding{
+.loginpadding {
   padding: 40px;
   width: 360px;
 }
 
-.loginlogo{
+.loginlogo {
   max-width: 60px;
-
 }
