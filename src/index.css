@@ -637,6 +637,10 @@ table thead th {
   border-bottom: 2px solid #4184f3;
 }
 
+.padding810{
+  padding: 8px 10px;
+}
+
 .biginput {
   border-radius: 3px;
   padding: 5px 10px;
@@ -723,7 +727,8 @@ table thead th {
 }
 
 .modal {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  perspective: 1000px;
 }
 
 .list-item {

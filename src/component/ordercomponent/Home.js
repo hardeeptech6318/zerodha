@@ -8,12 +8,15 @@ import Funds from '../Funds'
 import { Route, Routes } from "react-router-dom"
 import Sidebar from '../Sidebar'
 import Header from "../Header"
+import Gttmodal from '../global_component/Gttmodal'
+import Marketdepth from '../global_component/Marketdepth'
 
 function Home() {
   return (
    <>
         {/* <Createorder/> */}
-       {/* <Gttmodal show={true}/> */}
+       {/* <Gttmodal/> */}
+       <Marketdepth/>
    <header className='sticky-top bg-white bg-white'>
     <Header/>
     </header>
