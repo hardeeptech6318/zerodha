@@ -24,17 +24,17 @@ function Marketdepth() {
 
       </div>
     <div className='row mt-4'>
-        <div className='col'>ADANIGREEN BSE</div>
-        <div className='col text-end'>957.20 +1.85 (+0.19%)</div>
+        <div className='col '><span className='fw-bold fs-6'>ADANIGREEN</span> <span className='xxlsmall'>BSE</span></div>
+        <div className='col text-end'>957.20 <span className='text-success text-75'>+1.85 (+0.19%)</span></div>
     </div>
     <div className='row'>
     <div className='col-6'>
             <table class="table-borderless w-100 mb-2">
   <thead>
     <tr>
-      <th scope="col  " className='headerdim text-start px-0'>BID</th>
-      <th scope="col  " className='headerdim text-end px-0'>ORDERS</th>
-      <th scope="col " className='headerdim text-end px-0'>QTY.</th>
+      <th  className='headerdim text-start px-0'>BID</th>
+      <th  className='headerdim text-end px-0'>ORDERS</th>
+      <th  className='headerdim text-end px-0'>QTY.</th>
     </tr>
   </thead>
   <tbody className='text-primary'>
@@ -145,7 +145,7 @@ function Marketdepth() {
 
     </div>
       </div>
-      <div class="p-3">
+      <div class="p-1 border-top pt-3">
         <div className='row'>
             <div className='col-4'>
                 <butto className="btn btn-outline-primary py-2 ">Createt GTT</butto>

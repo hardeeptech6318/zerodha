@@ -10,12 +10,14 @@ import Sidebar from '../Sidebar'
 import Header from "../Header"
 import Gttmodal from '../global_component/Gttmodal'
 import Marketdepth from '../global_component/Marketdepth'
+import Createalert from '../global_component/Createalert'
 
 function Home() {
   return (
    <>
         {/* <Createorder/> */}
        {/* <Gttmodal/> */}
+       <Createalert/>
        <Marketdepth/>
    <header className='sticky-top bg-white bg-white'>
     <Header/>

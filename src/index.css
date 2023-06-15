@@ -112,6 +112,18 @@ th,
   border-radius: 0px;
   padding: 3px 15px;
 }
+.form-select{
+  border-radius: 3px;
+  border-color: #eee;
+}
+
+.form-select:focus{
+  box-shadow: none;
+  /* border-color: none; */
+  color: #444;
+  border-color: black;
+}
+
 
 .holdingsearch,
 .biginput,
@@ -132,6 +144,18 @@ th,
 .inputsearch:focus {
   width: 150px;
   outline: none;
+}
+
+.form-control{
+  border-radius: 3px;
+  border-color: #eee;
+}
+
+.form-control:focus{
+  box-shadow: none;
+  /* border-color: none; */
+  color: #444;
+  border-color: black;
 }
 
 .linkblue,
@@ -230,10 +254,22 @@ a:hover,
 
 input:focus,
 textarea:focus,
-select:focus,
-*:focus {
-  outline: none;
+select:focus{
+  box-shadow: none;
+  /* border-color: none; */
+  color: #444;
+  border-color: black;
 }
+
+input,textarea,select{
+  border-radius: 3px;
+  border-color: #eee;
+}
+
+
+
+
+
 
 .dropdown-menu.show {
   transform: translate3d(0px, 41px, 0px) !important;
@@ -719,6 +755,10 @@ table thead th {
 
 .modal-content {
   width: 700px;
+}
+
+.text-75{
+  font-size: 0.75rem;
 }
 
 .bg-light,
