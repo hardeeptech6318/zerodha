@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom"
 
 import Login from './component/Login'
 
-import Home from './component/ordercomponent/Home'
+import Home from './Home'
 // import Gtt from './component/ordercomponent/Gtt'
 // import Gttmodal from './component/global_component/Gttmodal'
 

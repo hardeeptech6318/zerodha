@@ -8,7 +8,7 @@ function Basket() {
       </div>
       <div>You haven't created any baskets.</div>
       <div className='mt-4'>
-        <button className='btn btn-primary'>New basket</button>
+        <button className='btn btn-primary py-2 px-3'>New basket</button>
       </div>
     </div>
   )

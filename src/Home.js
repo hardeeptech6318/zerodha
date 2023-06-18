@@ -1,16 +1,16 @@
 import React from 'react'
-import Dashboard from '../Dashboard'
-import Orders from '../Orders'
-import Holdings from '../Holdings'
-import Positions from '../Positions'
-import Funds from '../Funds'
+import Dashboard from './component/Dashboard'
+import Orders from './component/Orders'
+import Holdings from './component/Holdings'
+import Positions from './component/Positions'
+import Funds from './component/Funds'
 
 import { Route, Routes } from "react-router-dom"
-import Sidebar from '../Sidebar'
-import Header from "../Header"
-import Gttmodal from '../global_component/Gttmodal'
-import Marketdepth from '../global_component/Marketdepth'
-import Createalert from '../global_component/Createalert'
+import Sidebar from './component/Sidebar'
+import Header from "./component/Header"
+import Gttmodal from './component/global_component/Gttmodal'
+import Marketdepth from './component/global_component/Marketdepth'
+import Createalert from './component/global_component/Createalert'
 
 function Home() {
   return (

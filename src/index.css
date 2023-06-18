@@ -82,6 +82,10 @@ th,
   width: 70%;
 }
 
+.fs-14{
+  font-size: 14px!important;
+}
+
 .bigvalue {
   font-size: 2.625rem;
   font-weight: 300;
@@ -114,14 +118,17 @@ th,
 }
 .form-select{
   border-radius: 3px;
-  border-color: #eee;
+  border-color: #eee!important;
 }
 
-.form-select:focus{
+.form-select:focus,.alertsearch:focus{
   box-shadow: none;
   /* border-color: none; */
   color: #444;
   border-color: black;
+}
+.modal-content{
+  border-radius: 3px;
 }
 
 
@@ -194,6 +201,7 @@ th,
   color: white;
   padding: 10px;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 .fundbutton:hover {
@@ -208,6 +216,7 @@ th,
   color: white;
   padding: 10px;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 .withdrawbutton:hover {

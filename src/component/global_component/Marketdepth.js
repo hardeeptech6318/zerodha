@@ -4,12 +4,12 @@ function Marketdepth() {
   return (
     <>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#marketdepth">
   Launch demo modal
 </button>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{perspective:"1000px",backgroundColor:"rgba((255,255,255),0.7)"}} >
+<div class="modal fade" id="marketdepth" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{perspective:"1000px",backgroundColor:"rgba((255,255,255),0.7)"}} >
   <div class="modal-dialog"  >
     <div class="modal-content border shadow-sm " style={{maxWidth:"512px",padding:"25px",borderRadius:"4px"}}>
       
@@ -32,7 +32,7 @@ function Marketdepth() {
             <table class="table-borderless w-100 mb-2">
   <thead>
     <tr>
-      <th  className='headerdim text-start px-0'>BID</th>
+      <th    className='headerdim text-start px-0'>BID</th>
       <th  className='headerdim text-end px-0'>ORDERS</th>
       <th  className='headerdim text-end px-0'>QTY.</th>
     </tr>

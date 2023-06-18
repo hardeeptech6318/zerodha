@@ -6,6 +6,7 @@ import React ,{useEffect, useState}  from 'react'
 function Sidebar() {
   const [page, setpage] = useState({});
   const [pagelength, setpagelength] = useState(0);
+  const [data, setdata] = useState([]);
 
  
  
@@ -20,235 +21,13 @@ function Sidebar() {
     }
  }
 
-let data =   
-[
-  {
-      "id": 430051044,
-      "name": "today",
-      "items": [  {
-        "id": 5499712579,
-        "weight": 8,
-        "tradingsymbol": "ADANIGREEN",
-        "instrument_token": 912129,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    }]
-  },
-  {
-      "id": 430051045,
-      "name": "tomorrow",
-      "items": [ {
-        "id": 5236490989,
-        "weight": 1,
-        "tradingsymbol": "TORNTPOWER",
-        "instrument_token": 3529217,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-    {
-        "id": 5236490590,
-        "weight": 2,
-        "tradingsymbol": "TATAPOWER",
-        "instrument_token": 877057,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-    {
-        "id": 5236494947,
-        "weight": 3,
-        "tradingsymbol": "JSWENERGY",
-        "instrument_token": 4574465,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-    {
-        "id": 5262175391,
-        "weight": 4,
-        "tradingsymbol": "INFY",
-        "instrument_token": 408065,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-    {
-        "id": 5471503811,
-        "weight": 5,
-        "tradingsymbol": "INDUSINDBK",
-        "instrument_token": 1346049,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-    {
-        "id": 5499711381,
-        "weight": 6,
-        "tradingsymbol": "ADANIENT",
-        "instrument_token": 6401,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-    {
-        "id": 5499711540,
-        "weight": 7,
-        "tradingsymbol": "ADANIPOWER",
-        "instrument_token": 4451329,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-    {
-        "id": 5499712579,
-        "weight": 8,
-        "tradingsymbol": "ADANIGREEN",
-        "instrument_token": 912129,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    },
-          {
-              "id": 5236490989,
-              "weight": 1,
-              "tradingsymbol": "TORNTPOWER",
-              "instrument_token": 3529217,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          },
-          {
-              "id": 5236490590,
-              "weight": 2,
-              "tradingsymbol": "TATAPOWER",
-              "instrument_token": 877057,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          },
-          {
-              "id": 5236494947,
-              "weight": 3,
-              "tradingsymbol": "JSWENERGY",
-              "instrument_token": 4574465,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          },
-          {
-              "id": 5262175391,
-              "weight": 4,
-              "tradingsymbol": "INFY",
-              "instrument_token": 408065,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          },
-          {
-              "id": 5471503811,
-              "weight": 5,
-              "tradingsymbol": "INDUSINDBK",
-              "instrument_token": 1346049,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          },
-          {
-              "id": 5499711381,
-              "weight": 6,
-              "tradingsymbol": "ADANIENT",
-              "instrument_token": 6401,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          },
-          {
-              "id": 5499711540,
-              "weight": 7,
-              "tradingsymbol": "ADANIPOWER",
-              "instrument_token": 4451329,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          },
-          {
-              "id": 5499712579,
-              "weight": 8,
-              "tradingsymbol": "ADANIGREEN",
-              "instrument_token": 912129,
-              "segment": "NSE",
-              "exchange": "NSE",
-              "expiry": ""
-          }, {
-            "id": 5499711381,
-            "weight": 6,
-            "tradingsymbol": "ADANIENT",
-            "instrument_token": 6401,
-            "segment": "NSE",
-            "exchange": "NSE",
-            "expiry": ""
-        },
-        {
-            "id": 5499711540,
-            "weight": 7,
-            "tradingsymbol": "ADANIPOWER",
-            "instrument_token": 4451329,
-            "segment": "NSE",
-            "exchange": "NSE",
-            "expiry": ""
-        },
-        {
-            "id": 5499712579,
-            "weight": 8,
-            "tradingsymbol": "ADANIGREEN",
-            "instrument_token": 912129,
-            "segment": "NSE",
-            "exchange": "NSE",
-            "expiry": ""
-        } 
-      ]
-  },
-  {
-      "id": 430051046,
-      "name": "bank",
-      "items": [  {
-        "id": 5499712579,
-        "weight": 8,
-        "tradingsymbol": "ADANIGREEN",
-        "instrument_token": 912129,
-        "segment": "NSE",
-        "exchange": "NSE",
-        "expiry": ""
-    }]
-  },
-  {
-      "id": 430051047,
-      "name": "long term",
-      "items": []
-  },
-  {
-      "id": 430051048,
-      "name": "pharma",
-      "items": []
-  },
-  {
-      "id": 1434766327,
-      "name": "MW 6",
-      "items": []
-  },
-  {
-      "id": 1442299913,
-      "name": "MW 7",
-      "items": []
-  }
-]
 
 
+const getdata=async()=>{
+  let data2 =await fetch("http://localhost:5000/marketwatch")
+  let data3=await data2.json()
+  setdata(data3.data)
 
-
-useEffect(()=>{
   let length=0
 
 data.forEach((ele)=>{
@@ -260,13 +39,22 @@ length =length+ele.items.length
 setpagelength(length)
 
 
-  for (let i = 0; i < data.length; i++) {
-    const element = data[i];
+  for (let i = 0; i < data3.data.length; i++) {
+    const element = data3.data[i];
    if(element.items.length>0){
     setpage(element)
     break;
    }
   }
+
+}
+
+
+
+
+useEffect(()=>{
+  getdata()
+  
   
 },[])
    
@@ -330,7 +118,7 @@ const onleave=(item,i)=>{
 
   return (
     <div className='m-0 p-0 sidebartextsize  '   >
-      <div className='searchsidebar d-flex' >
+      <div className='searchsidebar border-bottom d-flex' >
       <label className="searchicon  p-3  " ><i className=" bi bi-search"></i></label>
   <input className="sidebarsearch " placeholder="Search eg:infy,bse,nifty fut, nifty weekly,gold mcx" type="text" />
   <label className='pagelabel' >{page?.items?.length}/{pagelength}</label>
@@ -511,8 +299,8 @@ const onleave=(item,i)=>{
         
       </>
     }):<>
-    <div className='d-flex justify-content-center align-items-center flex-column'>
-    <div className='binoculars' ><i  className="bi bi-binoculars "></i></div>
+    <div className='d-flex justify-content-center align-items-center flex-column pt-4'>
+    <div className='text-center' ><img className='w-50' src='./image/marketwatch.png'/></div>
     <div><h2>Nothing here</h2></div>
     <div className='addinstrument' >Use the search bar to add instruments.</div>
     <button className='btn btn-primary my-3 '>Add Instrument</button>

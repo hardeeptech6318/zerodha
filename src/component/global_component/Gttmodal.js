@@ -199,7 +199,7 @@ function Gttmodal(props) {
                 </div>
               </div>
             </div>
-           </div>
+           </div> 
 
 
           </div>

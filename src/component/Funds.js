@@ -17,8 +17,8 @@ function Funds() {
                 <i className="bi bi-pie-chart"></i>
               </span>
               <div className='float-end' >
-                <span className='linkblue mx-2' ><span className='mx-1' ><i className="bi bi-record-circle-fill"></i> </span>view statement</span>
-                <span className='linkblue' ><span className='mx-1'><i className="bi bi-info-circle"></i> </span>Help</span>
+                <a className='linkblue click mx-2' ><span className='mx-1' ><i className="bi bi-record-circle-fill"></i> </span>view statement</a>
+                <a className='linkblue click' ><span className='mx-1'><i className="bi bi-info-circle"></i> </span>Help</a>
               </div>
               <span>Equity</span>
             </div>
@@ -111,8 +111,8 @@ function Funds() {
               </span>
               <span>Commodity</span>
               <div className='float-end' >
-                <span className='linkblue mx-2' ><span className='mx-1' ><i className="bi bi-record-circle-fill"></i> </span>view statement</span>
-                <span className='linkblue' ><span className='mx-1'><i className="bi bi-info-circle"></i> </span>Help</span>
+                <a className='linkblue mx-2 click' ><span className='mx-1' ><i className="bi bi-record-circle-fill"></i> </span>view statement</a>
+                <a className='linkblue click' ><span className='mx-1'><i className="bi bi-info-circle"></i> </span>Help</a>
               </div>
             </div>
             <div className='p-3 border'>

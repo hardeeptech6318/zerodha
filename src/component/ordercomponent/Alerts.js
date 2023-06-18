@@ -8,7 +8,7 @@ function Alerts() {
 </div>
 <div>You haven't created any alerts.</div>
 <div className='mt-4'>
-  <button className='btn btn-primary'>Create new alert</button>
+  <button className='btn btn-primary py-2 px-3'>Create new alert</button>
 </div>
     </div>
   )

@@ -7,14 +7,14 @@ function Createalert() {
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#alert"
       >
         Launch demo modal
       </button>
 
       <div
         class="modal fade"
-        id="exampleModal"
+        id="alert"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -23,7 +23,7 @@ function Createalert() {
           <div class="modal-content" >
             <div class="modal-header justify-content-between p-3">
               <div className="fs-5 fw-bold">New alert</div>
-              <div className="text-primary">Help</div>
+              <div className="text-primary"><a href="/"><span className="me-2"><i class="bi bi-info-circle"></i></span>Help</a></div>
             </div>
             <div class="modal-body" style={{padding:"25px"}}>
               <div className="pb-3 ">
@@ -41,27 +41,38 @@ function Createalert() {
                     aria-label="Default select example"
                     style={{fontSize:"14px"}}
                   >
-                    <option selected></option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                   <option value="LastTradedPrice" selected>Last Traded Price</option>
+  <option value="HighPrice">High Price</option>
+   <option value="LowPrice">Low Price</option>
+    <option value="OpenPrice">Open Price</option>
+     <option value="ClosePrice">Close Price</option>
+      <option value="DayChange">Day Change</option>
+       <option value="DayChangePercent">Day Change Percent</option>
+        <option value="IntraDayChange">Intra Day Change</option>
+         <option value="IntraDayChangePercent">Intra Day Change Percent</option> 
+         <option value="LastTradedQuantity">Last Traded Quantity</option>
+          <option value="AverageTradePrice">Average Trade Price</option>
+           <option value="VolumeTraded">Volume Traded</option>
+            <option value="TotalBuyQuantity">Total Buy Quantity</option>
+             <option value="TotalSellQuantity">Total Sell Quantity</option>
+              <option value="OpenInterest">Open Interest</option>
+               <option value="OpenInterestDayHigh">Open Interest Day High</option>
+                <option value="OpenInterestDayLow">Open Interest Day Low</option>
+ 
                   </select>
                 </div>
                 <div className="col-6">
                   <label>Of</label>
 
-                  <div className="searchsidebar  d-flex border">
-                    <label className="searchicon  border-end p-2  ">
-                      <i className=" bi bi-search"></i>
-                    </label>
-                    <input
-                      className="sidebarsearch ps-3 py-2"
-                      placeholder="  "
-                      type="text"
-                    />
+                
+                  <div className='border d-flex' >
+      <label className=" ps-2 py-2   " ><i className=" bi bi-search"></i></label>
+  <input className="sidebarsearch padding15  " placeholder="Search eg:infy,bse,nifty fut, nifty weekly,gold mcx" type="text" />
+  
+  
 
-                    <div></div>
-                  </div>
+      </div> 
+
                 </div>
               </div>
 
@@ -72,11 +83,13 @@ function Createalert() {
                     aria-label="Default select example"
                     style={{fontSize:"14px"}}
                   >
-                    <option selected></option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                   <option value=">">Greater than (&gt;)</option> 
+                   <option value=">=">Greater than or equal to (&gt;=)</option>
+                    <option value="<">Less than (&lt;)</option>
+                    <option value="<=">Less than or equal to (&lt;=)</option>
+                     <option value="==">Equal to (==)</option></select>
+
+                  
                 </div>
                 <div className="col-6">
                   
@@ -133,27 +146,36 @@ function Createalert() {
                     aria-label="Default select example"
                     style={{fontSize:"14px"}}
                   >
-                    <option selected></option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <option selected value="LastTradedPrice">Last Traded Price</option>
+  <option value="HighPrice">High Price</option>
+   <option value="LowPrice">Low Price</option>
+    <option value="OpenPrice">Open Price</option>
+     <option value="ClosePrice">Close Price</option>
+      <option value="DayChange">Day Change</option>
+       <option value="DayChangePercent">Day Change Percent</option>
+        <option value="IntraDayChange">Intra Day Change</option>
+         <option value="IntraDayChangePercent">Intra Day Change Percent</option> 
+         <option value="LastTradedQuantity">Last Traded Quantity</option>
+          <option value="AverageTradePrice">Average Trade Price</option>
+           <option value="VolumeTraded">Volume Traded</option>
+            <option value="TotalBuyQuantity">Total Buy Quantity</option>
+             <option value="TotalSellQuantity">Total Sell Quantity</option>
+              <option value="OpenInterest">Open Interest</option>
+               <option value="OpenInterestDayHigh">Open Interest Day High</option>
+                <option value="OpenInterestDayLow">Open Interest Day Low</option>
+ 
                   </select>
                 </div>
                 <div className="col-6">
                   <label>Of</label>
 
-                  <div className="searchsidebar  d-flex border">
-                    <label className="searchicon  border-end p-2  ">
-                      <i className=" bi bi-search"></i>
-                    </label>
-                    <input
-                      className="sidebarsearch ps-3 py-2"
-                      placeholder="  "
-                      type="text"
-                    />
+                  <div className='border d-flex' >
+      <label className=" ps-2 py-2   " ><i className=" bi bi-search"></i></label>
+  <input className="sidebarsearch padding15  " placeholder="Search eg:infy,bse,nifty fut, nifty weekly,gold mcx" type="text" />
+  
+  
 
-                    <div></div>
-                  </div>
+      </div> 
                 </div>
               </div>
             </div>
