@@ -1,13 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { apiSlice, holdings } from '../features/api/apiSlice'
+import { apiSlice, holdingsApi,profileApi,marginsApi } from '../features/api/apiSlice'
+
 export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    [holdings.reducerPath]: holdings.reducer,
+    [holdingsApi.reducerPath]: holdingsApi.reducer,
+    [profileApi.reducerPath]: profileApi.reducer,
+    [marginsApi.reducerPath]: marginsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(apiSlice.middleware),
+    getDefaultMiddleware().concat(apiSlice.middleware,holdingsApi.middleware,profileApi.middleware,marginsApi.middleware),
     
 })
 setupListeners(store.dispatch)

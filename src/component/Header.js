@@ -1,31 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import "../App.css";
 import { NavLink } from "react-router-dom";
-import { useGetHoldingsQuery } from '../features/api/apiSlice'
+import { useGetProfileQuery } from '../features/api/apiSlice'
 
 
 function Header() {
   
   const {
-    data: posts,
+    data,
     isLoading,
     isSuccess,
     isError,
     error,
-  } = useGetHoldingsQuery()
+    refetch
+  } = useGetProfileQuery()
+  const [profile, setprofile] = useState([]);
 
-useEffect(()=>{
-setTimeout(() => {
-  console.log(error);
-}, 3000);
-},[])
+  
+
+  useEffect(()=>{
+    isLoading ? setprofile([]) : setprofile(data?.data);
+  },[profile])
+
+
   return (
     <div className=" border-bottom px-xxl-5 shadow-sm sticky-top niftyheader">
+      
       <div className="row m-0 p-0 align-items-center m-auto  ">
         <div className="leftside m-0    border-end  ">
           <div className="d-flex align-items-center  fw-bold height60">  
             <div className="me-2 ">
-              <span className="" >{isSuccess?posts.data[0].tradingsymbol:"...."}</span>
+              <span className="" >NIFTY</span>
               <span className="text-success mx-1    ">18147.65</span>
               <span className="headerdim opacity75 ">82.65 (0.46%)</span>
             </div>
@@ -88,7 +93,7 @@ setTimeout(() => {
 
                  <div class="dropdown">
   <a className={({isActive}) => (isActive ? "active dropdown-toggle " : 'none')} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  <span className=" avatar">HR</span><span className="ms-1 ">EM1078</span>
+  <span className=" avatar">HR</span><span className="ms-1 ">{profile?.user_id}</span>
   </a>
 
   <ul class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuLink"  style={{minWidth:"240px"}} >

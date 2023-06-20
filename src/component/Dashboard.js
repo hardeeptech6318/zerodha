@@ -5,9 +5,28 @@ import Highcharts, { chart, color } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import addTreemapModule from "highcharts/modules/treemap";
 import Holdingchart from "./Holdingchart";
+import { useGetMarginsQuery } from "../features/api/apiSlice";
 addTreemapModule(Highcharts);
 
 function Dashboard() {
+
+  const {
+    data:marginsdata,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+    refetch
+  } = useGetMarginsQuery()
+  const [margins, setmargins] = useState([]);
+
+  
+
+  useEffect(()=>{
+    refetch()
+    isLoading ? setmargins([]) : setmargins(marginsdata?.data);
+    console.log(margins);
+  },[margins])
   
   let data = [
     {
@@ -1104,18 +1123,18 @@ function Dashboard() {
               <div className="row mb-5">
                 <div className="col-5">
                   <div className="border-end">
-                  <div className="bigvalue">-340.9</div>
+                  <div className="bigvalue">{margins?.equity?.net}</div>
                   <div className="label">Margin available</div>
                 </div>
                 </div>
                 <div className="col-7 p-2 ps-4">
                   <div className="pb-2">
                     <span className="label">Margins used</span>
-                    <span className="mx-2">0</span>
+                    <span className="mx-2">{margins?.equity?.available.adhoc_margin}</span>
                   </div>
                   <div className="pb-2">
                     <span className=" label ">Opening balance</span>
-                    <span className="mx-2">0</span>
+                    <span className="mx-2">{margins?.equity?.available.opening_balance}</span>
                   </div>
                   <Link to="/" className="linkbluetext" >
                     <span className="me-1 text-primary"><i className="bi bi-record-circle-fill"></i></span>View statement
@@ -1135,18 +1154,18 @@ function Dashboard() {
               <div className="row">
                 <div className="col-5">
                   <div className="border-end">
-                  <div className="bigvalue">0</div>
+                  <div className="bigvalue">{margins?.commodity?.net}</div>
                   <div className="label">Margin available</div>
                 </div>
                 </div>
                 <div className="col-7 p-2 ps-4">
                   <div className="pb-2">
                     <span className="label">Margins used</span>
-                    <span className="mx-2">0</span>
+                    <span className="mx-2">{margins?.commodity?.available.adhoc_margin}</span>
                   </div>
                   <div className="pb-2">
                     <span className=" label ">Opening balance</span>
-                    <span className="mx-2">0</span>
+                    <span className="mx-2">{margins?.commodity?.available.opening_balance}</span>
                   </div>
                   <Link to="/" className="linkbluetext" >
                     <span className="me-1 text-primary"><i className="bi bi-record-circle-fill"></i></span>View statement

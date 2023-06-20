@@ -25,8 +25,8 @@ export const apiSlice = createApi({
 
 })
 
-export const holdings = createApi({
-    reducerPath: 'apiSlice',
+export const holdingsApi = createApi({
+    reducerPath: 'holdingsApi',
     baseQuery: fetchBaseQuery({
       baseUrl: 'http://localhost:5000',
     }),
@@ -49,7 +49,59 @@ export const holdings = createApi({
   }),
   
   })
+
   
+  export const profileApi = createApi({
+    reducerPath: 'profileApi',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'http://localhost:5000',
+    }),
+    tagTypes: ['Profile'],
+    endpoints: (builder) => ({
+      getProfile: builder.query({
+        query: () => '/profile',
+      }),
+   
+      profile: builder.mutation({
+      query: (body) => ({
+          headers:{
+  "Content-type":"application/json"
+          },
+        url: '/profile',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
+  
+  })
+
+
+  export const marginsApi = createApi({
+    reducerPath: 'marginsApi',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'http://localhost:5000',
+    }),
+    tagTypes: ['Margins'],
+    endpoints: (builder) => ({
+      getMargins: builder.query({
+        query: () => '/margins',
+      }),
+   
+      margins: builder.mutation({
+      query: (body) => ({
+          headers:{
+  "Content-type":"application/json"
+          },
+        url: '/margins',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
+  
+  })
+
   
   
   
@@ -58,4 +110,6 @@ export const holdings = createApi({
 
 
 export const { useGetPostsQuery ,usecreateUserMutation } = apiSlice
-export const { useGetHoldingsQuery,useholdingsMutation} = holdings
+export const { useGetHoldingsQuery,useholdingsMutation} = holdingsApi
+export const { useGetProfileQuery,useprofileMutation} = profileApi
+export const { useGetMarginsQuery,usemarginsMutation} = marginsApi

@@ -74,6 +74,11 @@ th,
   width: 12px;
 }
 
+.loaderpage{
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
 /* .leftside {
   width: 30%;
 } */

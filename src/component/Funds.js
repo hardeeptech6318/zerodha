@@ -1,6 +1,28 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import { useGetMarginsQuery } from "../features/api/apiSlice";
 
 function Funds() {
+
+  const {
+    data:marginsdata,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+    refetch
+  } = useGetMarginsQuery()
+  const [margins, setmargins] = useState([]);
+
+  
+
+  useEffect(()=>{
+    refetch()
+    isLoading ? setmargins([]) : setmargins(marginsdata?.data);
+    
+  },[margins])
+  
+
+
   return (
     <div className='p-4 pe-3'>
       <div>
@@ -29,72 +51,72 @@ function Funds() {
     <tr>
      
       <td className='opacity75  tablepadding'>Available margin</td>
-      <td className=' text-end  tablepadding ' ><h1>0.00</h1></td>
+      <td className=' text-end  tablepadding text-primary ' ><h1>{margins?.equity?.net.toFixed(2)}</h1></td>
    
     </tr>
     <tr>
       
       <td className='opacity75  tablepadding'>Used margin</td>
-      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
+      <td className=' text-end  tablepadding '><h1>{margins?.equity?.available.adhoc_margin.toFixed(2)}</h1></td>
       
     </tr>
     <tr className='border-bottom'>
      
       <td className='opacity75  tablepadding'>Available cash</td>
-      <td className=' text-end  tablepadding ' ><h1>-371.25</h1></td>
+      <td className=' text-end  tablepadding ' ><h1>{margins?.equity?.available.cash.toFixed(2)}</h1></td>
       
     </tr>
 
     <tr>
       <td className='opacity75  tablepadding' >Opening balance</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.available.opening_balance.toFixed(2)}</td>
     </tr>
 
     <tr>
       <td className='opacity75  tablepadding' >Payin</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.available.intraday_payin.toFixed(2)}</td>
     </tr>
 
 
     <tr>
       <td className='opacity75  tablepadding' >Payout</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.payout.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >SPAN</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.span.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Delivery margin</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.delivery.toFixed(2)}</td>
     </tr>    
 
     
     <tr>
       <td className='opacity75  tablepadding' >Exposure</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.exposure.toFixed(2)}</td>
     </tr>
     
     <tr className='border-bottom'>
       <td className='opacity75  tablepadding' >Options premium</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.option_premium.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Collateral (Liquid funds)</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.liquid_collateral.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Collateral (Equity)</td>
-      <td className='text-end  tablepadding '>0.00</td>
+      <td className='text-end  tablepadding '>{margins?.equity?.utilised.equity.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Total collateral</td>
-      <td className='text-end  tablepadding   '>0.00</td>
+      <td className='text-end  tablepadding   '>{margins?.equity?.utilised.stock_collateral.toFixed(2)}</td>
     </tr>
     
     
