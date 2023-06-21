@@ -1,13 +1,14 @@
 import React, { useEffect,useState } from "react";
 import "../App.css";
 import { NavLink } from "react-router-dom";
-import { useGetProfileQuery } from '../features/api/apiSlice'
+import { useGetProfileQuery,useGetMarketwatchQuery } from '../features/api/apiSlice'
+
 
 
 function Header() {
   
   const {
-    data,
+    data:profiledata,
     isLoading,
     isSuccess,
     isError,
@@ -19,8 +20,15 @@ function Header() {
   
 
   useEffect(()=>{
-    isLoading ? setprofile([]) : setprofile(data?.data);
+    isLoading ? setprofile([]) : setprofile(profiledata?.data);
+    
   },[profile])
+
+  
+
+  // useEffect(()=>{
+  //   isLoading ? setprofile([]) : setprofile(profiledata?.data);
+  // },[profile])
 
 
   return (

@@ -1,5 +1,6 @@
 
 import React ,{useEffect, useState}  from 'react'
+import { useGetMarketwatchQuery } from '../features/api/apiSlice'
 
 
 
@@ -22,41 +23,47 @@ function Sidebar() {
  }
 
 
-
-const getdata=async()=>{
-  let data2 =await fetch("http://localhost:5000/marketwatch")
-  let data3=await data2.json()
-  setdata(data3.data)
-
-  let length=0
-
-data.forEach((ele)=>{
- 
-length =length+ele.items.length
-
-
-})
-setpagelength(length)
-
-
-  for (let i = 0; i < data3.data.length; i++) {
-    const element = data3.data[i];
-   if(element.items.length>0){
-    setpage(element)
-    break;
-   }
-  }
-
-}
-
-
+ const {
+  data:marketdata,
+  isLoading,
+  isSuccess,
+  isError,
+  error,
+  refetch
+} = useGetMarketwatchQuery()
 
 
 useEffect(()=>{
-  getdata()
+  isLoading ? setdata([]) : setdata(marketdata?.data);
+  let length=0
+
+  marketdata?.data.forEach((ele)=>{
+   
+  length =length+ele.items.length
   
   
-},[])
+  })
+  setpagelength(length)
+  
+  
+    for (let i = 0; i < marketdata?.data.length; i++) {
+      const element = marketdata?.data[i];
+     if(element.items.length>0){
+      setpage(element)
+      break;
+     }
+    }
+
+},[data])
+
+
+
+
+
+
+
+
+
    
 const onleave=(item,i)=>{
   let id = document.getElementsByClassName(`hoverbutton${i}`);

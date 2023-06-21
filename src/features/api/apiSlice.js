@@ -102,6 +102,59 @@ export const holdingsApi = createApi({
   
   })
 
+
+  export const marketwatchApi = createApi({
+    reducerPath: 'marketwatchApi',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'http://localhost:5000',
+    }),
+    tagTypes: ['Margins'],
+    endpoints: (builder) => ({
+      getMarketwatch: builder.query({
+        query: () => '/marketwatch',
+      }),
+   
+      marketwatch: builder.mutation({
+      query: (body) => ({
+          headers:{
+  "Content-type":"application/json"
+          },
+        url: '/marketwatch',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
+  
+  })
+
+
+  
+  export const ordersApi = createApi({
+    reducerPath: 'ordersApi',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'http://localhost:5000',
+    }),
+    tagTypes: ['Orders'],
+    endpoints: (builder) => ({
+      getOrders: builder.query({
+        query: () => '/orders',
+      }),
+   
+      orders: builder.mutation({
+      query: (body) => ({
+          headers:{
+  "Content-type":"application/json"
+          },
+        url: '/orders',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
+  
+  })
+
   
   
   
@@ -113,3 +166,5 @@ export const { useGetPostsQuery ,usecreateUserMutation } = apiSlice
 export const { useGetHoldingsQuery,useholdingsMutation} = holdingsApi
 export const { useGetProfileQuery,useprofileMutation} = profileApi
 export const { useGetMarginsQuery,usemarginsMutation} = marginsApi
+export const { useGetMarketwatchQuery,usemarketwatchMutation} = marketwatchApi
+export const { useGetOrdersQuery,useordersMutation} = ordersApi

@@ -24,8 +24,7 @@ function Dashboard() {
 
   useEffect(()=>{
     refetch()
-    isLoading ? setmargins([]) : setmargins(marginsdata?.data);
-    console.log(margins);
+    isLoading ? setmargins([]):setmargins(marginsdata?.data);
   },[margins])
   
   let data = [

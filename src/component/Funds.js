@@ -42,7 +42,7 @@ function Funds() {
                 <a className='linkblue click mx-2' ><span className='mx-1' ><i className="bi bi-record-circle-fill"></i> </span>view statement</a>
                 <a className='linkblue click' ><span className='mx-1'><i className="bi bi-info-circle"></i> </span>Help</a>
               </div>
-              <span>Equity</span>
+              <span>commodity</span>
             </div>
             <div className='p-3 border'>
             <table className="table table-hover table-borderless">
@@ -51,72 +51,72 @@ function Funds() {
     <tr>
      
       <td className='opacity75  tablepadding'>Available margin</td>
-      <td className=' text-end  tablepadding text-primary ' ><h1>{margins?.equity?.net.toFixed(2)}</h1></td>
+      <td className=' text-end  tablepadding text-primary ' ><h1>{margins?.commodity?.net.toFixed(2)}</h1></td>
    
     </tr>
     <tr>
       
       <td className='opacity75  tablepadding'>Used margin</td>
-      <td className=' text-end  tablepadding '><h1>{margins?.equity?.available.adhoc_margin.toFixed(2)}</h1></td>
+      <td className=' text-end  tablepadding '><h1>{margins?.commodity?.available.adhoc_margin?.toFixed(2)}</h1></td>
       
     </tr>
     <tr className='border-bottom'>
      
       <td className='opacity75  tablepadding'>Available cash</td>
-      <td className=' text-end  tablepadding ' ><h1>{margins?.equity?.available.cash.toFixed(2)}</h1></td>
+      <td className=' text-end  tablepadding ' ><h1>{margins?.commodity?.available.cash?.toFixed(2)}</h1></td>
       
     </tr>
 
     <tr>
       <td className='opacity75  tablepadding' >Opening balance</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.available.opening_balance.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.available.opening_balance?.toFixed(2)}</td>
     </tr>
 
     <tr>
       <td className='opacity75  tablepadding' >Payin</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.available.intraday_payin.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.available.intraday_payin?.toFixed(2)}</td>
     </tr>
 
 
     <tr>
       <td className='opacity75  tablepadding' >Payout</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.payout.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.payout?.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >SPAN</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.span.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.span?.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Delivery margin</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.delivery.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.delivery?.toFixed(2)}</td>
     </tr>    
 
     
     <tr>
       <td className='opacity75  tablepadding' >Exposure</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.exposure.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.exposure?.toFixed(2)}</td>
     </tr>
     
     <tr className='border-bottom'>
       <td className='opacity75  tablepadding' >Options premium</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.option_premium.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.option_premium?.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Collateral (Liquid funds)</td>
-      <td className='text-end  tablepadding  '>{margins?.equity?.utilised.liquid_collateral.toFixed(2)}</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.liquid_collateral?.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Collateral (Equity)</td>
-      <td className='text-end  tablepadding '>{margins?.equity?.utilised.equity.toFixed(2)}</td>
+      <td className='text-end  tablepadding '>{margins?.commodity?.utilised.commodity?.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepadding' >Total collateral</td>
-      <td className='text-end  tablepadding   '>{margins?.equity?.utilised.stock_collateral.toFixed(2)}</td>
+      <td className='text-end  tablepadding   '>{margins?.commodity?.utilised.stock_collateral?.toFixed(2)}</td>
     </tr>
     
     
@@ -144,57 +144,57 @@ function Funds() {
     <tr>
      
       <td className='opacity75  tablepaddingp'>Available margin</td>
-      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
+      <td className=' text-end  tablepadding '><h1>{margins?.commodity?.net.toFixed(2)}</h1></td>
    
     </tr>
     <tr>
       
       <td className='opacity75  tablepaddingp'>Used margin</td>
-      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
+      <td className=' text-end  tablepadding '><h1>{margins?.commodity?.available.adhoc_margin.toFixed(2)}</h1></td>
       
     </tr>
     <tr className='border-bottom'>
      
       <td className='opacity75  tablepaddingp'>Available cash</td>
-      <td className=' text-end  tablepadding '><h1>0.00</h1></td>
+      <td className=' text-end  tablepadding '><h1>{margins?.commodity?.available.cash.toFixed(2)}</h1></td>
       
     </tr>
 
     <tr>
       <td className='opacity75  tablepaddingp' >Opening balance</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.available.opening_balance.toFixed(2)}</td>
     </tr>
 
     <tr>
       <td className='opacity75  tablepaddingp' >Payin</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.available.intraday_payin.toFixed(2)}</td>
     </tr>
 
 
     <tr>
       <td className='opacity75  tablepaddingp' >Payout</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.payout.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepaddingp' >SPAN</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.span.toFixed(2)}</td>
     </tr>
     
     <tr>
       <td className='opacity75  tablepaddingp' >Delivery margin</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.delivery.toFixed(2)}</td>
     </tr>    
 
     
     <tr>
       <td className='opacity75  tablepaddingp' >Exposure</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.exposure.toFixed(2)}</td>
     </tr>
     
     <tr >
       <td className='opacity75  tablepaddingp' >Options premium</td>
-      <td className='text-end  tablepadding  '>0.00</td>
+      <td className='text-end  tablepadding  '>{margins?.commodity?.utilised.option_premium.toFixed(2)}</td>
     </tr>
     
     

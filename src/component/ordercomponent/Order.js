@@ -1,280 +1,45 @@
-import React ,{useState}from 'react'
+import React ,{useState,useEffect}from 'react'
 import Tablesort from '../commonfunction/Tablesort';
+import { useGetOrdersQuery } from "../../features/api/apiSlice";
 
 function Order() {
 
+  const {
+    data:orders,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+    refetch
+  } = useGetOrdersQuery()
+  
+  const [trades, settrades] = useState([]);
+const [data, setdata] = useState([]);
 
-let data2 =[
-  {
-      "placed_by": "EM1078",
-      "order_id": "230525003144376",
-      "exchange_order_id": "1000000122271051",
-      "parent_order_id": null,
-      "status": "COMPLETE",
-      "status_message": null,
-      "status_message_raw": null,
-      "order_timestamp": "2023-05-25 14:05:16",
-      "exchange_update_timestamp": "2023-05-25 14:05:16",
-      "exchange_timestamp": "2023-05-25 14:05:16",
-      "variety": "regular",
-      "modified": false,
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18250CE",
-      "instrument_token": 18847490,
-      "order_type": "LIMIT",
-      "transaction_type": "BUY",
-      "validity": "DAY",
-      "validity_ttl": 0,
-      "product": "NRML",
-      "quantity": 50,
-      "disclosed_quantity": 0,
-      "price": 7.6,
-      "trigger_price": 0,
-      "average_price": 7.5,
-      "filled_quantity": 50,
-      "pending_quantity": 0,
-      "cancelled_quantity": 0,
-      "market_protection": 0,
-      "meta": {},
-      "tag": null,
-      "guid": "19Xwcdnxtdrssiu"
-  },
-  {
-      "placed_by": "EM1078",
-      "order_id": "230525003176597",
-      "exchange_order_id": "1000000123745756",
-      "parent_order_id": null,
-      "status": "COMPLETE",
-      "status_message": null,
-      "status_message_raw": null,
-      "order_timestamp": "2023-05-25 14:09:12",
-      "exchange_update_timestamp": "2023-05-25 14:09:12",
-      "exchange_timestamp": "2023-05-25 14:09:12",
-      "variety": "regular",
-      "modified": false,
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18250CE",
-      "instrument_token": 18847490,
-      "order_type": "MARKET",
-      "transaction_type": "BUY",
-      "validity": "DAY",
-      "validity_ttl": 0,
-      "product": "NRML",
-      "quantity": 50,
-      "disclosed_quantity": 0,
-      "price": 0,
-      "trigger_price": 0,
-      "average_price": 10.15,
-      "filled_quantity": 50,
-      "pending_quantity": 0,
-      "cancelled_quantity": 0,
-      "market_protection": 0,
-      "meta": {},
-      "tag": null,
-      "guid": "19Xgzzwuxouxxfs"
-  },
-  {
-      "placed_by": "EM1078",
-      "order_id": "230525003184205",
-      "exchange_order_id": "1000000124065411",
-      "parent_order_id": null,
-      "status": "COMPLETE",
-      "status_message": null,
-      "status_message_raw": null,
-      "order_timestamp": "2023-05-25 14:11:00",
-      "exchange_update_timestamp": "2023-05-25 14:11:00",
-      "exchange_timestamp": "2023-05-25 14:11:00",
-      "variety": "regular",
-      "modified": false,
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18250CE",
-      "instrument_token": 18847490,
-      "order_type": "LIMIT",
-      "transaction_type": "SELL",
-      "validity": "DAY",
-      "validity_ttl": 0,
-      "product": "NRML",
-      "quantity": 100,
-      "disclosed_quantity": 0,
-      "price": 5,
-      "trigger_price": 10.2,
-      "average_price": 10.2,
-      "filled_quantity": 100,
-      "pending_quantity": 0,
-      "cancelled_quantity": 0,
-      "market_protection": 0,
-      "meta": {},
-      "tag": null,
-      "guid": "19Xvmxqvikyispo"
-  },
-  {
-      "placed_by": "EM1078",
-      "order_id": "230525003931511",
-      "exchange_order_id": "1100000141593641",
-      "parent_order_id": null,
-      "status": "COMPLETE",
-      "status_message": null,
-      "status_message_raw": null,
-      "order_timestamp": "2023-05-25 15:00:50",
-      "exchange_update_timestamp": "2023-05-25 15:00:50",
-      "exchange_timestamp": "2023-05-25 15:00:50",
-      "variety": "regular",
-      "modified": false,
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18300PE",
-      "instrument_token": 18849282,
-      "order_type": "MARKET",
-      "transaction_type": "BUY",
-      "validity": "DAY",
-      "validity_ttl": 0,
-      "product": "NRML",
-      "quantity": 100,
-      "disclosed_quantity": 0,
-      "price": 0,
-      "trigger_price": 0,
-      "average_price": 3.75,
-      "filled_quantity": 100,
-      "pending_quantity": 0,
-      "cancelled_quantity": 0,
-      "market_protection": 0,
-      "meta": {},
-      "tag": null,
-      "guid": "19Xejemcsoonbbf"
-  },
-  {
-      "placed_by": "EM1078",
-      "order_id": "230525003949312",
-      "exchange_order_id": "1100000142029100",
-      "parent_order_id": null,
-      "status": "COMPLETE",
-      "status_message": null,
-      "status_message_raw": null,
-      "order_timestamp": "2023-05-25 15:05:54",
-      "exchange_update_timestamp": "2023-05-25 15:05:54",
-      "exchange_timestamp": "2023-05-25 15:01:28",
-      "variety": "regular",
-      "modified": false,
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18300PE",
-      "instrument_token": 18849282,
-      "order_type": "LIMIT",
-      "transaction_type": "BUY",
-      "validity": "DAY",
-      "validity_ttl": 0,
-      "product": "NRML",
-      "quantity": 50,
-      "disclosed_quantity": 0,
-      "price": 2,
-      "trigger_price": 0,
-      "average_price": 2,
-      "filled_quantity": 50,
-      "pending_quantity": 0,
-      "cancelled_quantity": 0,
-      "market_protection": 0,
-      "meta": {},
-      "tag": null,
-      "guid": "19Xecnpkmvmbbgs"
-  }
-]
+  
 
-let data3=[
-  {
-      "account_id": "EM1078",
-      "trade_id": "14381015",
-      "order_id": "230525003144376",
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18250CE",
-      "instrument_token": 18847490,
-      "product": "NRML",
-      "average_price": 7.5,
-      "quantity": 50,
-      "exchange_order_id": "1000000122271051",
-      "transaction_type": "BUY",
-      "fill_timestamp": "2023-05-25 14:05:16",
-      "order_timestamp": "14:05:16",
-      "exchange_timestamp": "2023-05-25 14:05:16"
-  },
-  {
-      "account_id": "EM1078",
-      "trade_id": "14544995",
-      "order_id": "230525003176597",
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18250CE",
-      "instrument_token": 18847490,
-      "product": "NRML",
-      "average_price": 10.15,
-      "quantity": 50,
-      "exchange_order_id": "1000000123745756",
-      "transaction_type": "BUY",
-      "fill_timestamp": "2023-05-25 14:09:12",
-      "order_timestamp": "14:09:12",
-      "exchange_timestamp": "2023-05-25 14:09:12"
-  },
-  {
-      "account_id": "EM1078",
-      "trade_id": "14674575",
-      "order_id": "230525003184205",
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18250CE",
-      "instrument_token": 18847490,
-      "product": "NRML",
-      "average_price": 10.2,
-      "quantity": 100,
-      "exchange_order_id": "1000000124065411",
-      "transaction_type": "SELL",
-      "fill_timestamp": "2023-05-25 14:11:00",
-      "order_timestamp": "14:11:00",
-      "exchange_timestamp": "2023-05-25 14:11:00"
-  },
-  {
-      "account_id": "EM1078",
-      "trade_id": "102858411",
-      "order_id": "230525003931511",
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18300PE",
-      "instrument_token": 18849282,
-      "product": "NRML",
-      "average_price": 3.75,
-      "quantity": 100,
-      "exchange_order_id": "1100000141593641",
-      "transaction_type": "BUY",
-      "fill_timestamp": "2023-05-25 15:00:50",
-      "order_timestamp": "15:00:50",
-      "exchange_timestamp": "2023-05-25 15:00:50"
-  },
-  {
-      "account_id": "EM1078",
-      "trade_id": "103562771",
-      "order_id": "230525003949312",
-      "exchange": "NFO",
-      "tradingsymbol": "NIFTY23MAY18300PE",
-      "instrument_token": 18849282,
-      "product": "NRML",
-      "average_price": 2,
-      "quantity": 50,
-      "exchange_order_id": "1100000142029100",
-      "transaction_type": "BUY",
-      "fill_timestamp": "2023-05-25 15:05:54",
-      "order_timestamp": "15:05:54",
-      "exchange_timestamp": "2023-05-25 15:01:28"
-  }
-]
+  useEffect(()=>{
+    refetch()
+    isLoading ? setdata([]):setdata(orders?.data?.day);
+    isLoading ? settrades([]):settrades(orders?.data?.net);
+  },[orders])
 
-const [trades, settrades] = useState([]);
-const [data, setdata] = useState(data2);
+
+
+
 const showtrade =()=>{
 
-  trades.length>0?settrades([]):settrades(data3)
+  trades.length>0?settrades([]):settrades(orders?.data?.net)
 }
   return (
   <div className='allpagepadding' >
-    {data.length>0?
+    {data?.length>0?
       <div>
 
         <div>
               <div className='d-flex justify-content-between mt-2 mb-3'>
                   <div>
-                  <h3 style={{fontSize:"1.125rem"}} >Executed orders ({data.length})</h3>
+                  <h3 style={{fontSize:"1.125rem"}} >Executed orders ({data?.length})</h3>
                   </div>  
 
                   <div className="d-flex align-items-baseline">
@@ -308,7 +73,7 @@ const showtrade =()=>{
                   </thead>
                   <tbody>
 
-                  {data && data.length>0 &&  data.map((ele,i)=>{
+                  {data && data.length>0 &&  data?.map((ele,i)=>{
 
 
 
@@ -319,7 +84,7 @@ const showtrade =()=>{
                   <td  scope="row" >{ele.product}</td>
                   <td  scope="row">{ele.quantity}/{ele.filled_quantity}</td>
                   <td  scope="row" className='text-end border-end' >{ele.trigger_price!=0?<>{ele.average_price}/{ele.trigger_price}</>:ele.average_price}</td>
-                  <td  scope="row" ><span className="completebadge">{ele.status}</span></td>
+                  <td  scope="row" ><span className="completebadge">{ele?.status}</span></td>
 
                   </tr>
                   })}
@@ -375,7 +140,7 @@ const showtrade =()=>{
                             </thead>
                             <tbody>
 
-                            {  trades.map((ele,i)=>{
+                            {  trades?.map((ele,i)=>{
 
 
 
