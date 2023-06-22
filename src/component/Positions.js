@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Tablesort from "./commonfunction/Tablesort";
+import { useGetPositionsQuery } from '../features/api/apiSlice'
 
 function Positions() {
   let data2 = {
@@ -133,16 +134,45 @@ function Positions() {
     ],
   };
 
-  const [data, setdata] = useState(data2);
+
+
+
+
+
+  const [data, setdata] = useState([]);
   const [masterChecked, setmasterchecked] = useState(false);
   const [selectedlist, setselectedlist] = useState([]);
   const [net, setnet] = useState(data2.net);
+  const [profile, setprofile] = useState([]);
+
+
+  const {
+    data:positiondata,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+    refetch
+  } = useGetPositionsQuery()
+  
+
+  
+
+  useEffect(()=>{
+    isLoading ? setdata([]) : setdata(positiondata?.data);
+    console.log(profile);
+    
+  },[positiondata])
+
+
+
+
 
   const onMasterCheck = (e) => {
     let tempList = net;
 
-    tempList.length > 0 &&
-      tempList.map((user) => (user.selected = e.target.checked));
+    tempList?.length > 0 &&
+      tempList?.map((user) => (user.selected = e.target.checked));
       console.log(tempList);
 
     setmasterchecked(e.target.checked);
@@ -157,16 +187,16 @@ function Positions() {
   const onItemCheck = (e, item) => {
     let tempList = net;
 
-    tempList.map((user) => {
+    tempList?.map((user) => {
       if (user.instrument_token === item.instrument_token) {
         user.selected = e.target.checked;
       }
       return user;
     });
 
-    const totalItems = net.length;
+    const totalItems = net?.length;
 
-    const totalCheckedItems = tempList.filter((e) => console.log(e.selected)).length;
+    const totalCheckedItems = tempList.filter((e) => console.log(e.selected))?.length;
     
     setmasterchecked(totalItems === totalCheckedItems);
     setnet(tempList);
@@ -187,7 +217,7 @@ function Positions() {
           <div className="d-flex justify-content-between mb-3">
             <div>
               <h3 style={{ fontSize: "1.125rem" }}>
-                Positions ({data.net.length})
+                Positions ({data.net?.length})
               </h3>
             </div>
 
@@ -240,43 +270,43 @@ function Positions() {
                     />
                   </th>
                   <th
-                    onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                    onClick={() => setdata(Tablesort(data.net, "tradingsymbol"))}
                     scope="col"
                   >
                     Product
                   </th>
                   <th
-                    onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                    onClick={() => setdata(Tablesort(data.net, "tradingsymbol"))}
                     scope="col"
                   >
                     Instrument
                   </th>
                   <th
-                    onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                    onClick={() => setdata(Tablesort(data.net, "tradingsymbol"))}
                     scope="col"
                   >
                     Qty.
                   </th>
                   <th
-                    onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                    onClick={() => setdata(Tablesort(data.net, "tradingsymbol"))}
                     scope="col"
                   >
                     Avg.
                   </th>
                   <th
-                    onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                    onClick={() => setdata(Tablesort(data.net, "tradingsymbol"))}
                     scope="col"
                   >
                     LTP
                   </th>
                   <th
-                    onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                    onClick={() => setdata(Tablesort(data.net, "tradingsymbol"))}
                     scope="col"
                   >
                     P&L
                   </th>
                   <th
-                    onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                    onClick={() => setdata(Tablesort(data.net, "tradingsymbol"))}
                     scope="col"
                   >
                     Chg.
@@ -285,8 +315,8 @@ function Positions() {
               </thead>
               <tbody>
                 {net &&
-                  net.length > 0 &&
-                  net.map((ele, i) => {
+                  net?.length > 0 &&
+                  net?.map((ele, i) => {
                     return (
                       <tr key={i} className=" border-top">
                         <td className=" tablepaddinghold">
@@ -352,28 +382,28 @@ function Positions() {
               </tbody>
               <tfoot>
                 <tr className="border-top">
-                  <td colSpan={3} className="p-0">{selectedlist.length>0 ?<button
+                  <td colSpan={3} className="p-0">{selectedlist?.length>0 ?<button
               className="btn btn-primary py-1 px-3 " style={{fontSize:"0.75rem"}}
               onClick={() => getSelectedRows()}
-            >{`Exit ${selectedlist.length} position`}</button>:null}</td>
+            >{`Exit ${selectedlist?.length} position`}</button>:null}</td>
                   
                   <td></td>
                   <td></td>
                   <td></td>
                   <td className="text-center">Total</td>
                   <td >
-                    {data.net.map((ele) => ele.pnl).reduce((a, b) => a + b) >
+                    {data.net?.map((ele) => ele.pnl).reduce((a, b) => a + b) >
                     0 ? (
                       <span className="text-success">
                         {data.net
-                          .map((ele) => ele.pnl)
+                          ?.map((ele) => ele.pnl)
                           .reduce((a, b) => a + b)
                           .toFixed(2)}
                       </span>
                     ) : (
                       <span className="text-red">
                         {data.net
-                          .map((ele) => ele.pnl)
+                          ?.map((ele) => ele.pnl)
                           .reduce((a, b) => a + b)
                           .toFixed(2)}
                       </span>
@@ -394,7 +424,7 @@ function Positions() {
             <div className="d-flex justify-content-between mt-2 mb-3">
               <div>
                 <h3 style={{ fontSize: "1.125rem" }}>
-                  Day's history({data.day.length})
+                  Day's history({data.day?.length})
                 </h3>
               </div>
 
@@ -439,43 +469,43 @@ function Positions() {
                 <thead>
                   <tr className="label position-sticky">
                     <th
-                      onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                      onClick={() => setdata(Tablesort(data.day, "tradingsymbol"))}
                       scope="col"
                     >
                       Product
                     </th>
                     <th
-                      onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                      onClick={() => setdata(Tablesort(data.day, "tradingsymbol"))}
                       scope="col"
                     >
                       Instrument
                     </th>
                     <th
-                      onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                      onClick={() => setdata(Tablesort(data.day, "tradingsymbol"))}
                       scope="col"
                     >
                       Qty.
                     </th>
                     <th
-                      onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                      onClick={() => setdata(Tablesort(data.day, "tradingsymbol"))}
                       scope="col"
                     >
                       Avg.
                     </th>
                     <th
-                      onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                      onClick={() => setdata(Tablesort(data.day, "tradingsymbol"))}
                       scope="col"
                     >
                       LTP
                     </th>
                     <th
-                      onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                      onClick={() => setdata(Tablesort(data.day, "tradingsymbol"))}
                       scope="col"
                     >
                       P&L
                     </th>
                     <th
-                      onClick={() => setdata(Tablesort(data, "tradingsymbol"))}
+                      onClick={() => setdata(Tablesort(data.day, "tradingsymbol"))}
                       scope="col"
                     >
                       Chg.
@@ -483,9 +513,7 @@ function Positions() {
                   </tr>
                 </thead>
                 <tbody className="pb-3 ">
-                  {data.day &&
-                    data.day.length > 0 &&
-                    data.day.map((ele, i) => {
+                  { data?.day?.map((ele, i) => {
                       return (
                         <tr key={i} className=" border-top">
                           <td className=" tablepaddinghold ">
@@ -550,18 +578,18 @@ function Positions() {
                     <td></td>
                     <td className="text-center">Total</td>
                     <td>
-                      {data.day.map((ele) => ele.pnl).reduce((a, b) => a + b) >
+                      {data.day?.map((ele) => ele.pnl).reduce((a, b) => a + b) >
                       0 ? (
                         <span className="text-success">
                           {data.day
-                            .map((ele) => ele.pnl)
+                            ?.map((ele) => ele.pnl)
                             .reduce((a, b) => a + b)
                             .toFixed(2)}
                         </span>
                       ) : (
                         <span className="text-red">
                           {data.day
-                            .map((ele) => ele.pnl)
+                            ?.map((ele) => ele.pnl)
                             .reduce((a, b) => a + b)
                             .toFixed(2)}
                         </span>

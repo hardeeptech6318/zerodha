@@ -155,8 +155,58 @@ export const holdingsApi = createApi({
   
   })
 
+
+  export const positionsApi = createApi({
+    reducerPath: 'positionApi',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'http://localhost:5000',
+    }),
+    tagTypes: ['Positions'],
+    endpoints: (builder) => ({
+      getPositions: builder.query({
+        query: () => '/positions',
+      }),
+   
+      positions: builder.mutation({
+      query: (body) => ({
+          headers:{
+  "Content-type":"application/json"
+          },
+        url: '/positions',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
+  
+  })
+
   
   
+  export const tradesApi = createApi({
+    reducerPath: 'tradesApi',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'http://localhost:5000',
+    }),
+    tagTypes: ['Trades'],
+    endpoints: (builder) => ({
+      getTrades: builder.query({
+        query: () => '/trades',
+      }),
+   
+      trades: builder.mutation({
+      query: (body) => ({
+          headers:{
+  "Content-type":"application/json"
+          },
+        url: '/trades',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
+  
+  })
   
 
 
@@ -168,3 +218,5 @@ export const { useGetProfileQuery,useprofileMutation} = profileApi
 export const { useGetMarginsQuery,usemarginsMutation} = marginsApi
 export const { useGetMarketwatchQuery,usemarketwatchMutation} = marketwatchApi
 export const { useGetOrdersQuery,useordersMutation} = ordersApi
+export const { useGetPositionsQuery,usepositionMutation} = positionsApi
+export const { useGetTradesQuery,usetradesMutation} = tradesApi

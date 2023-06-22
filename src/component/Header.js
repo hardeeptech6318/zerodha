@@ -26,9 +26,6 @@ function Header() {
 
   
 
-  // useEffect(()=>{
-  //   isLoading ? setprofile([]) : setprofile(profiledata?.data);
-  // },[profile])
 
 
   return (
