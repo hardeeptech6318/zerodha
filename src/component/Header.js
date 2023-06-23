@@ -96,26 +96,26 @@ function Header() {
                 
 
 
-                 <div class="dropdown">
+                 <div className="dropdown">
   <a className={({isActive}) => (isActive ? "active dropdown-toggle " : 'none')} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
   <span className=" avatar">HR</span><span className="ms-1 ">{profile?.user_id}</span>
   </a>
 
-  <ul class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuLink"  style={{minWidth:"240px"}} >
-    <li className="border-bottom px-2 py-1"><a class="" href="#">
+  <ul className="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuLink"  style={{minWidth:"240px"}} >
+    <li className="border-bottom px-2 py-1"><a className="" href="#">
       <div className=" text-wrap" style={{fontSize:"1rem"}}>Hardeepsinh Ratansinh Parmar</div>
       <div className="label">hardeepsinhparmar2020@gmail.com</div>
       </a></li>
-    <li className="px-2 py-1 border-bottom"><a class="" href="#"><span className="me-2"><i class="bi bi-person"></i></span>My profile/<span className="label">settings</span></a></li>
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-1 text-primary"><i className="bi bi-record-circle-fill"></i></span>Console</a></li>
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-2"><i className="bi bi-coin"></i> </span>Coin</a></li>
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-2"><i className="bi bi-telephone"></i></span>Support</a></li>
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-2"><i className="bi bi-person-plus"></i></span>Invite friends</a></li>
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-2"><i className="bi bi-compass"></i></span>Tour Kite</a></li>
+    <li className="px-2 py-1 border-bottom"><a className="" href="#"><span className="me-2"><i className="bi bi-person"></i></span>My profile/<span className="label">settings</span></a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-1 text-primary"><i className="bi bi-record-circle-fill"></i></span>Console</a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-coin"></i> </span>Coin</a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-telephone"></i></span>Support</a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-person-plus"></i></span>Invite friends</a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-compass"></i></span>Tour Kite</a></li>
 
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-2"><i class="bi bi-keyboard"></i></span>Keyboard shortcuts</a></li>
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-2"><i className="bi bi-journal"></i></span>User manual</a></li>
-    <li className="px-2 py-1"><a class="" href="#"><span className="me-2"><i className="bi bi-box-arrow-left"></i></span>Logout</a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-keyboard"></i></span>Keyboard shortcuts</a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-journal"></i></span>User manual</a></li>
+    <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-box-arrow-left"></i></span>Logout</a></li>
     
     
   </ul>

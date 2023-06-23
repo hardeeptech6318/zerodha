@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { ordermodal,buysell } from "../../features/api/globalstate";
+import { useSelector, useDispatch } from 'react-redux'
 
 function Createorder() {
   
   const [hide, sethide] = useState(true);
-  const [toggle, settoggle] = useState(true);
-  const [tags, settags] = useState(false);
   
+  const [tags, settags] = useState(false);
+  const buysell = useSelector(state => state.counter.buysell)
+  const dispatch = useDispatch()
+  const [toggle, settoggle] = useState(buysell);
   
 
   const[form,setform]=useState({
@@ -32,10 +36,10 @@ function Createorder() {
   
 
   useEffect(() => {
+    console.log(buysell);
+    settoggle(buysell)
     
-    
-    console.log(form);
-  }, [form]);
+  }, [form,buysell]);
 
   return (
     <>
@@ -437,7 +441,7 @@ function Createorder() {
             >
               {toggle ? "Buy" : "Sell"}
             </button>
-            <button type="button"  className="btn btn-outline-secondary py-2 ms-2 ">
+            <button type="button" onClick={() => dispatch(ordermodal(false))}  className="btn btn-outline-secondary py-2 ms-2 ">
               Cancel
             </button>
           </div>

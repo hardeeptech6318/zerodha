@@ -11,11 +11,19 @@ import Header from "./component/Header"
 import Gttmodal from './component/global_component/Gttmodal'
 import Marketdepth from './component/global_component/Marketdepth'
 import Createalert from './component/global_component/Createalert'
+import { useSelector, useDispatch } from 'react-redux'
+import { ordermodal } from './features/api/globalstate'
+import Createorder from './component/global_component/Createorder'
 
 function Home() {
+  const ordermodal = useSelector(state => state.counter.value)
+  
+
+  
+  
   return (
    <>
-        {/* <Createorder/> */}
+        {ordermodal?<Createorder/>:null}
        {/* <Gttmodal/> */}
        <Createalert/>
        <Marketdepth/>

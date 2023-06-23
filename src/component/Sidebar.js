@@ -1,10 +1,14 @@
 
 import React ,{useEffect, useState}  from 'react'
 import { useGetMarketwatchQuery } from '../features/api/apiSlice'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { ordermodal ,buysell} from '../features/api/globalstate'
 
 
 function Sidebar() {
+  
+  const dispatch = useDispatch()
+
   const [page, setpage] = useState({});
   const [pagelength, setpagelength] = useState(0);
   const [data, setdata] = useState([]);
@@ -125,15 +129,41 @@ const onleave=(item,i)=>{
 
   return (
     <div className='m-0 p-0 sidebartextsize  '   >
+      <div className='position-relative'>
       <div className='searchsidebar border-bottom d-flex' >
       <label className="searchicon  p-3  " ><i className=" bi bi-search"></i></label>
   <input className="sidebarsearch " placeholder="Search eg:infy,bse,nifty fut, nifty weekly,gold mcx" type="text" />
   <label className='pagelabel' >{page?.items?.length}/{pagelength}</label>
   <div>
-   
   </div>
 
+  
+
+      </div>
+      <div className='position-absolute bg-white  w-100' style={{zIndex:"2"}}>
+        <ul className='w-100 m-0 p-0'>
+          <li className='w-100 d-flex align-items-center justify-content-between p-2 m-0 border-bottom'>
+            <span>IDEA</span>
+            <span >
+              <span className='fsc-6'>VODAFONE IDEA </span>
+              <span className='nse'>NSE</span>
+            </span>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+          
+        </ul>
       </div>  
+      </div>
        <div className='instrument'>
        <div >
        {page.items && page.items.length>0? page.items.map((ele,i)=>{
@@ -168,8 +198,8 @@ const onleave=(item,i)=>{
           </div>
         </div>
         <div key={i} className={` hoverbutton${i}  hidemenubutton end-0 top-8  showmenu   position-absolute`}>
-            <button className=' hoverbuttondisign mx-1 bg-primary border-primary text-white' style={{backgroundColor:"#4184f3"}} >B</button>
-            <button className='hoverbuttondisign  text-white bg-red border-red ' >S</button>
+            <button className=' hoverbuttondisign mx-1 bg-primary border-primary text-white' style={{backgroundColor:"#4184f3"}} onClick={() => {dispatch(buysell(true));dispatch(ordermodal(true))}} >B</button>
+            <button className='hoverbuttondisign  text-white bg-red border-red ' onClick={() => {dispatch(buysell(false));dispatch(ordermodal(true))}} >S</button>
             <button className='hoverbuttondisign bgwhite  mx-1' onClick={()=>showmarketdepth(ele,i)}  ><i className="bi bi-text-center"></i></button>
             <button className='hoverbuttondisign bgwhite ' ><i className="bi bi-graph-up-arrow"></i></button>
             <button className='hoverbuttondisign bgwhite ms-1' ><i className="bi bi-trash3"></i></button>
@@ -317,7 +347,7 @@ const onleave=(item,i)=>{
        </div>
        </div>
 
-       <ul >
+       <ul className='ul' >
         {data.map((el,i)=>{
           return <li key={i} className={page.name===el.name? 'activepage sidebarpagination pe-auto opacity65':'sidebarpagination pe-auto opacity65'} onClick={()=>slectedpage(el)} >{i+1}</li>
         })}

@@ -134,16 +134,11 @@ function Positions() {
     ],
   };
 
-
-
-
-
-
-  const [data, setdata] = useState([]);
+const [data, setdata] = useState([]);
   const [masterChecked, setmasterchecked] = useState(false);
   const [selectedlist, setselectedlist] = useState([]);
   const [net, setnet] = useState(data2.net);
-  const [profile, setprofile] = useState([]);
+  
 
 
   const {
@@ -159,9 +154,8 @@ function Positions() {
   
 
   useEffect(()=>{
+    refetch()
     isLoading ? setdata([]) : setdata(positiondata?.data);
-    console.log(profile);
-    
   },[positiondata])
 
 
