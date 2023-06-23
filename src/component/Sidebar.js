@@ -181,7 +181,7 @@ const onleave=(item,i)=>{
         <div   className={`showmarketdepth${i} showallmarketdepth smalltext  `} style={{display:"none"}} >
           <div className='row border-bottom '>
             <div className='col-6'>
-            <table class="table-borderless w-100 mb-2">
+            <table className="table-borderless w-100 mb-2">
   <thead>
     <tr>
       <th scope="col  " className='headerdim text-start px-0'>BID</th>
@@ -227,7 +227,7 @@ const onleave=(item,i)=>{
 </table>
             </div>
             <div className='col-6'>
-            <table class="table-borderless w-100 ">
+            <table className="table-borderless w-100 ">
   <thead>
     <tr>
       <th scope="col" className='headerdim px-0 text-start'>OFFER</th>
@@ -273,7 +273,7 @@ const onleave=(item,i)=>{
             </div>
           </div>
           <div className='row text-center'>
-            <div className='col text-primary py-2'><i class="bi bi-chevron-down"></i>  View 20 depth</div></div>
+            <div className='col text-primary py-2'><i className="bi bi-chevron-down"></i>  View 20 depth</div></div>
           <div className='row border-top py-3 '>
           <div className='row '>
             <div className='col-6  '><div className='row  '><div className='col-6   lighttext '>Open</div><div className='col-6   text-end'>555.5</div></div></div>
