@@ -8,20 +8,22 @@ import Login from './component/Login'
 
 import Home from './Home'
 // import Gtt from './component/ordercomponent/Gtt'
-// import Gttmodal from './component/global_component/Gttmodal'
+import Gttmodal from './component/global_component/Gttmodal'
 
 
 function App() {
   return (
     <>
-    {/* <Login/> */}
+    
+    
   
   
     
   
       
     
-    
+   
+
 
 
 

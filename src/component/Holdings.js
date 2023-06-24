@@ -3,6 +3,8 @@ import Holdingchart from "./Holdingchart";
 import Tablesort from "./commonfunction/Tablesort";
 import Menu from "./global_component/Menu";
 import { useGetHoldingsQuery } from "../features/api/apiSlice";
+
+
 import Loader from "./global_component/Loader";
 
 function Holdings() {
@@ -25,11 +27,13 @@ function Holdings() {
 
 
 
+
+
   
   useEffect(() => {
-    isLoading ? setdata([]) : setdata(posts?.data);
+setdata(posts?.data);
 
-    if (data.length > 0) {
+    if (data?.length > 0) {
       let investment = data
         .map((ele) => ele.quantity * ele.average_price)
         .reduce((a, b) => a + b)
@@ -61,7 +65,7 @@ function Holdings() {
         pl,
       });
     }
-  }, [data]);
+  }, [data,isLoading]);
 
   return (
 
@@ -191,7 +195,7 @@ function Holdings() {
                         scope="row"
                         className="border-end tablepaddinghold text-start d-flex justify-content-between"
                       >
-                        <span>{ele.tradingsymbol}</span> <Menu />{" "}
+                        <span>{ele.tradingsymbol}</span> <Menu data={ele} />
                       </td>
                       <td>{ele.quantity}</td>
                       <td>{ele.average_price.toFixed(2)}</td>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import Highcharts, { chart, color } from "highcharts";
+import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import addTreemapModule from "highcharts/modules/treemap";
 import Holdingchart from "./Holdingchart";
 import { useGetMarginsQuery } from "../features/api/apiSlice";
-addTreemapModule(Highcharts);
+// addTreemapModule(Highcharts);
 
 function Dashboard() {
 
@@ -1021,8 +1021,17 @@ function Dashboard() {
       close_price: 18314.8,
     },
   ];
+
+let data2=[]
+data.forEach((ele)=>{
+  if(new Date(ele.timestamp)?.getDate()%10==0){
+data2.push(ele)
+  }
+})
+
+
   let configurechart = [];
-  data.forEach((element, i) => {
+  data2.forEach((element, i) => {
     configurechart.push([
       new Date(element.timestamp).getTime(),
       element.close_price,
@@ -1032,7 +1041,7 @@ function Dashboard() {
   let overviewchartOptions = {
     plotLines: [
       {
-        color: "#FF0000",
+        color: "#4184f3",
       },
     ],
 
@@ -1083,13 +1092,10 @@ function Dashboard() {
     },
 
     plotOptions: {
-      spline: {
-        states: {
-          hover: {
-            lineWidth: 2,
-          },
-        },
-      },
+  
+      series: {
+        color: '#4184f3'
+    }
     },
 
     series: [
@@ -1100,7 +1106,7 @@ function Dashboard() {
         marker: {
           enabled: false,
         },
-        lineWidth: 3,
+        lineWidth: 2,
       },
     ],
   };

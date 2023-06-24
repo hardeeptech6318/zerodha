@@ -24,9 +24,7 @@ function Home() {
   return (
    <>
         {ordermodal?<Createorder/>:null}
-       {/* <Gttmodal/> */}
-       <Createalert/>
-       <Marketdepth/>
+       
    <header className='sticky-top bg-white bg-white'>
     <Header/>
     </header>

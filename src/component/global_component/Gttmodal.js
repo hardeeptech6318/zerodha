@@ -3,14 +3,9 @@ import React from 'react'
 function Gttmodal(props) {
   return (
     <>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-      Launch demo modal
-    </button>
+
     
-    
-    {props.show===false?<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-      </div>:
-    <div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" style={{display:"block"}}>
+<div class="modal fade" id="gtt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="p-3 border-bottom ">
@@ -210,7 +205,7 @@ function Gttmodal(props) {
               </div>
               <div className='col-5 text-end'>
             <button type="button" class="btn btn-primary px-3 py-2 ">Place</button>
-            <button type="button"  class="btn btn-outline-secondary py-2 ms-2 ">
+            <button type="button" data-bs-dismiss="modal"  class="btn btn-outline-secondary py-2 ms-2 ">
               Cancel
             </button>
               </div>
@@ -219,7 +214,7 @@ function Gttmodal(props) {
           </div>
         </div>
       </div>
-    </div>}
+    </div>
     
     
     </>

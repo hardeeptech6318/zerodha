@@ -3,14 +3,7 @@ import React from "react";
 function Createalert() {
   return (
     <>
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#alert"
-      >
-        Launch demo modal
-      </button>
+   
 
       <div
         class="modal fade"

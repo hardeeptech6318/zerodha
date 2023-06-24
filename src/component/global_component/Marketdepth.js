@@ -4,9 +4,7 @@ function Marketdepth() {
   return (
     <>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#marketdepth">
-  Launch demo modal
-</button>
+
 
 
 <div class="modal fade" id="marketdepth" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{perspective:"1000px",backgroundColor:"rgba((255,255,255),0.7)"}} >
@@ -148,7 +146,10 @@ function Marketdepth() {
       <div class="p-1 border-top pt-3">
         <div className='row'>
             <div className='col-4'>
-                <butto className="btn btn-outline-primary py-2 ">Createt GTT</butto>
+                <butto className="btn btn-outline-primary py-2 " type="button"
+             
+             data-bs-toggle="modal"
+             data-bs-target="#gtt">Createt GTT</butto>
             </div>
             <div className='col-8 text-end'>
             <button type="button" class="btn btn-outline-primary py-2 px-3">Buy</button>

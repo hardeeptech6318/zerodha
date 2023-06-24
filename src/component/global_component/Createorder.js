@@ -8,6 +8,7 @@ function Createorder() {
   
   const [tags, settags] = useState(false);
   const buysell = useSelector(state => state.counter.buysell)
+  const data = useSelector(state => state.counter.data)
   const dispatch = useDispatch()
   const [toggle, settoggle] = useState(buysell);
   
@@ -17,7 +18,7 @@ function Createorder() {
     order_type:'regular',
     exchange:'NSE',
     intra_long:'longterm',
-    quantity:0,
+    quantity:1,
     price:0,
     trigger_price:0,
     market_limit:'market',
@@ -36,10 +37,17 @@ function Createorder() {
   
 
   useEffect(() => {
-    console.log(buysell);
+    console.log(data);
     settoggle(buysell)
+    setform({...form,
+      exchange:data?.exchange,
+      price:data?.last_price,
+      trigger_price:data?.last_price,
+
     
-  }, [form,buysell]);
+    })
+    
+  }, [buysell,data]);
 
   return (
     <>
@@ -61,7 +69,7 @@ function Createorder() {
          {/*######################## header ############################################* */}
         <div className="container " style={tags?{width:"725px"}:{width:"600px"}}>
          
-          <div
+          <div style={{borderRadius:"3px"}}
             className={
               toggle
                 ? "row py-3 bg-primary text-white"
@@ -69,7 +77,7 @@ function Createorder() {
             }
           >
             <div className="col-6 fw-bold">
-              Buy TORNTPOWER <small>NSE</small> x 1 Qty
+              {form.buysell} {data.tradingsymbol}<small className="ms-2" >{form.exchange}</small><small className="mx-2" >{form.quantity}</small> x  Qty
             </div>
             <div className="col-6 ">
               <div className="form-check form-switch form-check-reverse  ">
@@ -256,17 +264,17 @@ function Createorder() {
           <div className="row mt-4">
             <div className="col-4 position-relative">
               <label className="position-absolute label_position ">Qty.</label>
-              <input type="number" className="biginput" onChange={(e)=>setform({...form,quantity:e.target.value})} />
+              <input type="number" className="biginput" value={form.quantity}  onChange={(e)=>setform({...form,quantity:e.target.value})} />
             </div>
             <div className="col-4 position-relative">
               <label className="position-absolute label_position bg-white px-1">Price</label>
-              <input type="number" className={form.market_limit!=='limit' && form.sl!='SL'?"biginput diablebg":"biginput "} disabled={form.market_limit!=='limit' && form.sl!='SL'} onChange={(e)=>setform({...form,price:e.target.value})} />
+              <input type="number" value={form.price} className={form.market_limit!=='limit' && form.sl!='SL'?"biginput diablebg":"biginput "} disabled={form.market_limit!=='limit' && form.sl!='SL'} onChange={(e)=>setform({...form,price:e.target.value})} />
             </div>
             <div className="col-4 position-relative ">
               <label className="position-absolute label_position ">
                 {form.order_type==='cover'?'Stoploss trigger':'Trigger price'}
               </label>
-              <input disabled={form.sl==='SL' ||form.sl==='SL-M' || form.order_type==='cover' ?false:true} type="number" className={form.sl==='SL' ||form.sl==='SL-M' || form.order_type==='cover' ?"biginput ":"biginput diablebg"} onChange={(e)=>setform({...form,trigger_price:e.target.value})} />
+              <input value={form.trigger_price}  disabled={form.sl==='SL' ||form.sl==='SL-M' || form.order_type==='cover' ?false:true} type="number" className={form.sl==='SL' ||form.sl==='SL-M' || form.order_type==='cover' ?"biginput ":"biginput diablebg"} onChange={(e)=>setform({...form,trigger_price:e.target.value})} />
             </div>
           </div>
 
@@ -418,7 +426,7 @@ function Createorder() {
                 <input disabled={!form.target} type="number" className="smallinput w-50 ms-2" onChange={(e)=>setform({...form,stoploss_percent:e.target.value})} />%
               </div>
             </div>
-            <div className="col-2">Learn more</div>
+            <div className="col-2 d-flex align-items-center justify-content-end"><a href="https://zrd.sh/gtt">Learn more</a></div>
           </div>:null}
         </div>
 

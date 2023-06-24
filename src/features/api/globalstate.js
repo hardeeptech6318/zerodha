@@ -4,7 +4,8 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
     value: false,
-    buysell:true
+    buysell:true,
+    data:{}
   },
   reducers: {
     ordermodal: (state,action) => {
@@ -13,11 +14,15 @@ export const counterSlice = createSlice({
     buysell: (state,action) => {
       state.buysell  =action.payload
     },
+    golbaldata:(state,action) => {
+      state.data  =action.payload
+    },
+
    
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { buysell, incrementByAmount ,ordermodal} = counterSlice.actions
+export const { buysell,ordermodal,golbaldata} = counterSlice.actions
 
 export default counterSlice.reducer
