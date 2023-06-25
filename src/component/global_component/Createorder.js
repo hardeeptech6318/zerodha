@@ -37,7 +37,7 @@ function Createorder() {
   
 
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
     settoggle(buysell)
     setform({...form,
       exchange:data?.exchange,

@@ -4,9 +4,45 @@ import { useSelector, useDispatch } from "react-redux";
 import { ordermodal, buysell,golbaldata } from "../../features/api/globalstate";
 import Createalert from "./Createalert";
 import Marketdepth from "./Marketdepth";
+import {useAddMarketwatchPostMutation,useGetMarketwatchQuery} from "../../features/api/apiSlice"
+import { Link, NavLink } from "react-router-dom";
 
 function Menu(props) {
   const dispatch = useDispatch();
+  const [addNewPost, response] = useAddMarketwatchPostMutation()
+ 
+  const {
+    data: marketdata,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+    refetch,
+  } = useGetMarketwatchQuery({ refetchOnMountOrArgChange: true });
+
+
+  const data = useSelector(state => state.counter.data)
+  const addtomrket=()=>{
+    addNewPost({
+      weight: 11,
+      tradingsymbol: data?.tradingsymbol,
+      instrument_token: data?.instrument_token,
+      segment: data?.segment,
+      exchange: data?.exchange,
+      expiry: data?.expiry,
+    })
+    .unwrap()
+    .then(() => refetch())
+    .then((error) => {
+      console.log(error)
+    })
+  }
+
+
+ 
+
+
+
   return (
     <>
     <Createalert/>
@@ -119,15 +155,15 @@ function Menu(props) {
             </a>
           </li>
           <li>
-            <a class="dropdown-item padding810 " href="#">
+            <Link class="dropdown-item padding810 " to="/chart">
               <span className="me-2">
                 <i class="bi bi-graph-up-arrow"></i>
               </span>
               Chart
-            </a>
+            </Link>
           </li>
           <li>
-            <a class="dropdown-item padding810 " href="#">
+            <a class="dropdown-item padding810 " type="button" onClick={()=>addtomrket()}>
               <span className="me-2">
                 <i class="bi bi-binoculars"></i>
               </span>
@@ -140,7 +176,7 @@ function Menu(props) {
               type="button"
               onClick={() =>
                 window.open(
-                  `https://stocks.tickertape.in/INFY?exchange=NSE&broker=kite&theme=default`,
+                  `https://stocks.tickertape.in/${data.tradingsymbol}?exchange=${data.exchange}&broker=kite&theme=default`,
                   "_blank",
                   "location=yes,height=450,width=600,directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,"
                 )
@@ -162,7 +198,7 @@ function Menu(props) {
               type="button"
               onClick={() =>
                 window.open(
-                  `https://mo.streak.tech/?utm_source=context-menu&utm_medium=kite&stock=NSE:INFY&theme=default`,
+                  `https://mo.streak.tech/?utm_source=context-menu&utm_medium=kite&stock=${data.exchange}:${data.tradingsymbol}&theme=default`,
                   "_blank",
                   "location=yes,height=450,width=600,directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,"
                 )

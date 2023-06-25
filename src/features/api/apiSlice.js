@@ -114,7 +114,7 @@ export const holdingsApi = createApi({
         query: () => '/marketwatch',
       }),
    
-      marketwatch: builder.mutation({
+      addMarketwatchPost: builder.mutation({
       query: (body) => ({
           headers:{
   "Content-type":"application/json"
@@ -142,7 +142,8 @@ export const holdingsApi = createApi({
       }),
    
       orders: builder.mutation({
-      query: (body) => ({
+      query: (body) => (
+        {
           headers:{
   "Content-type":"application/json"
           },
@@ -216,7 +217,7 @@ export const { useGetPostsQuery ,usecreateUserMutation } = apiSlice
 export const { useGetHoldingsQuery,useholdingsMutation} = holdingsApi
 export const { useGetProfileQuery,useprofileMutation} = profileApi
 export const { useGetMarginsQuery,usemarginsMutation} = marginsApi
-export const { useGetMarketwatchQuery,usemarketwatchMutation} = marketwatchApi
+export const { useGetMarketwatchQuery,useAddMarketwatchPostMutation} = marketwatchApi
 export const { useGetOrdersQuery,useordersMutation} = ordersApi
 export const { useGetPositionsQuery,usepositionMutation} = positionsApi
 export const { useGetTradesQuery,usetradesMutation} = tradesApi

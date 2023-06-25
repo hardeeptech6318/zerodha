@@ -11,6 +11,7 @@ import Home from './Home'
 import Gttmodal from './component/global_component/Gttmodal'
 
 
+
 function App() {
   return (
     <>
@@ -29,7 +30,7 @@ function App() {
 
         <Routes>  
       <Route path="/*" element={<Home/>} />
-
+      
       
       <Route path="/login" element={<Login/>} />
       

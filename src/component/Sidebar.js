@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useGetMarketwatchQuery } from "../features/api/apiSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { ordermodal, buysell } from "../features/api/globalstate";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function Sidebar() {
     isError,
     error,
     refetch,
-  } = useGetMarketwatchQuery();
+  } = useGetMarketwatchQuery({ refetchOnMountOrArgChange: true });
 
   useEffect(() => {
     isLoading ? setdata([]) : setdata(marketdata?.data);
@@ -218,9 +219,9 @@ function Sidebar() {
                         >
                           <i className="bi bi-text-center"></i>
                         </button>
-                        <button className="hoverbuttondisign bgwhite ">
+                        <Link type="button" to="/chart"  className="hoverbuttondisign bgwhite "  >
                           <i className="bi bi-graph-up-arrow"></i>
-                        </button>
+                        </Link>
                         <button className="hoverbuttondisign bgwhite ms-1">
                           <i className="bi bi-trash3"></i>
                         </button>

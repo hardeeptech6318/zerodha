@@ -14,6 +14,7 @@ import Createalert from './component/global_component/Createalert'
 import { useSelector, useDispatch } from 'react-redux'
 import { ordermodal } from './features/api/globalstate'
 import Createorder from './component/global_component/Createorder'
+import TradingViewWidget from './TradingViewWidget'
 
 function Home() {
   const ordermodal = useSelector(state => state.counter.value)
@@ -36,6 +37,7 @@ function Home() {
         <div className='rightside   shadow-sm '  >
         <Routes>  
       <Route path="" element={<Dashboard/>} />
+      <Route path="chart" element={<TradingViewWidget/>} />
       
       <Route path="orders/*" element={<Orders/>} />
       

@@ -1,6 +1,10 @@
 import React from 'react'
+import { useSelector, useDispatch } from "react-redux";
+import { ordermodal, buysell } from "../../features/api/globalstate";
+
 
 function Marketdepth() {
+  const dispatch = useDispatch();
   return (
     <>
 
@@ -152,8 +156,14 @@ function Marketdepth() {
              data-bs-target="#gtt">Createt GTT</butto>
             </div>
             <div className='col-8 text-end'>
-            <button type="button" class="btn btn-outline-primary py-2 px-3">Buy</button>
-            <button type="button" class="btn btn-outline-danger mx-2 py-2 px-3">Sell</button>
+            <button type="button" class="btn btn-outline-primary py-2 px-3" data-bs-dismiss="modal"  onClick={() => {
+                            dispatch(buysell(true));
+                            dispatch(ordermodal(true));
+                          }}>Buy</button>
+            <button type="button" class="btn btn-outline-danger mx-2 py-2 px-3" data-bs-dismiss="modal"   onClick={() => {
+                            dispatch(buysell(false));
+                            dispatch(ordermodal(true));
+                          }}>Sell</button>
             <button type="button" class="btn btn-outline-secondary py-2 px-3" data-bs-dismiss="modal">Close</button>
        
             </div>
