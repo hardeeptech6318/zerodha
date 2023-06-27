@@ -1,6 +1,24 @@
-import React,{useRef} from 'react'
+import React,{useRef,useState} from 'react'
+import { useSigninMutation } from '../features/api/apiSlice';
 
 function Login() {
+
+    const [username, setusername] = useState("");
+    const [password, setpassword] = useState("");
+    const [signIn, response] = useSigninMutation()
+
+    const addtomrket=()=>{
+        signIn({
+        username,
+        password
+        })
+        .unwrap()
+        .then((res) => console.log(res))
+        .then((error) => {
+          console.log(error)
+        })
+      }
+    
 
     const ref = useRef(null);
 
@@ -26,16 +44,16 @@ function Login() {
         </div>
         <div className='w-100 pb-4 position-relative '>
             <label className='showuser'  htmlFor='userid' style={{display:'none'}}>User ID</label>
-            <input ref={ref} onFocus={()=>inputfocus('showuser')}   className='logininput ' id='userid' type='text' placeholder='User ID(eg:AB0001)'/>
+            <input ref={ref} onChange={(e)=>setusername(e.target.value)} onFocus={()=>inputfocus('showuser')}   className='logininput ' id='userid' type='text' placeholder='User ID(eg:AB0001)'/>
         </div>
         
         <div  className='w-100 pb-4 position-relative'>
         <label>Password</label>
-            <input  className= 'logininput ' type='password' placeholder='Password'/>
+            <input  className= 'logininput ' type='password' placeholder='Password' onChange={(e)=>setpassword(e.target.value)}/>
         </div>
         <div  className='w-100'>
         
-            <button className=' btn w-100 bg-red text-white'>Login</button>
+            <button className=' btn w-100  btn-danger text-white' onClick={addtomrket} >Login</button>
             </div>
         <div className='modal_order opacity75 text-center mt-2 mb-3'>
             Forget user ID or passowrd

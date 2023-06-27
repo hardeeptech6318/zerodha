@@ -425,6 +425,10 @@ input,textarea,select{
   font-size: .5625rem;
 }
 
+.btn-danger{
+  background-color: #ff5722;
+}
+
 .nse,.bse,.other-exc{
   padding: 1px 5px;
   margin-left: 5px;

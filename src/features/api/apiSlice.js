@@ -208,6 +208,35 @@ export const holdingsApi = createApi({
   }),
   
   })
+
+
+  export const signinApi = createApi({
+    reducerPath: 'signIn',
+    baseQuery: fetchBaseQuery({
+      baseUrl: 'http://localhost:5000',
+    }),
+    tagTypes: ['Signin'],
+    endpoints: (builder) => ({
+      getSignin: builder.query({
+        query: () => '/signin',
+      }),
+   
+      signin: builder.mutation({
+      query: (body) => ({
+        
+        credentials: 'include',
+          headers:{
+  "Content-type":"application/json"
+          },
+        url: '/signin',
+        method: 'POST',
+        body,
+      }),
+    }),
+  }),
+  
+  })
+  
   
 
 
@@ -221,3 +250,4 @@ export const { useGetMarketwatchQuery,useAddMarketwatchPostMutation} = marketwat
 export const { useGetOrdersQuery,useordersMutation} = ordersApi
 export const { useGetPositionsQuery,usepositionMutation} = positionsApi
 export const { useGetTradesQuery,usetradesMutation} = tradesApi
+export const { useGetSigninQuery,useSigninMutation} = signinApi

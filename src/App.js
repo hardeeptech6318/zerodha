@@ -9,6 +9,7 @@ import Login from './component/Login'
 import Home from './Home'
 // import Gtt from './component/ordercomponent/Gtt'
 import Gttmodal from './component/global_component/Gttmodal'
+import Form from './Form'
 
 
 
@@ -30,6 +31,7 @@ function App() {
 
         <Routes>  
       <Route path="/*" element={<Home/>} />
+      <Route path="/form" element={<Form/>} />
       
       
       <Route path="/login" element={<Login/>} />
