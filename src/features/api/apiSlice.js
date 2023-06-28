@@ -191,6 +191,11 @@ export const holdingsApi = createApi({
     }),
     tagTypes: ['Trades'],
     endpoints: (builder) => ({
+      credentials: "include",
+      headers:{
+        "Authorization":localStorage.getItem('token'),
+        "Content-type":"application/json"
+      },
       getTrades: builder.query({
         query: () => '/trades',
       }),
@@ -198,7 +203,8 @@ export const holdingsApi = createApi({
       trades: builder.mutation({
       query: (body) => ({
           headers:{
-  "Content-type":"application/json"
+            "authorization":localStorage.getItem('token'),
+            "Content-type":"application/json"
           },
         url: '/trades',
         method: 'POST',
@@ -223,8 +229,13 @@ export const holdingsApi = createApi({
    
       signin: builder.mutation({
       query: (body) => ({
-        
-        credentials: 'include',
+        // mode:"same-origin",
+        // "SameSite":"none",
+        // "secure":true,
+        redirect:"follow",
+        // credentials: "include",
+        // credentials: 'include',
+        // redirect: 'follow'
           headers:{
   "Content-type":"application/json"
           },

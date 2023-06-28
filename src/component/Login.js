@@ -13,7 +13,7 @@ function Login() {
         password
         })
         .unwrap()
-        .then((res) => console.log(res))
+        .then((res) =>localStorage.setItem('token',res.token))
         .then((error) => {
           console.log(error)
         })

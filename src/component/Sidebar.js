@@ -10,6 +10,7 @@ function Sidebar() {
   const [page, setpage] = useState({});
   const [pagelength, setpagelength] = useState(0);
   const [data, setdata] = useState([]);
+  const [searchdata, setsearchdata] = useState([]);
 
   const showmarketdepth = (item, i) => {
     let id = document.getElementsByClassName(`showmarketdepth${i}`)[0].style
@@ -34,7 +35,7 @@ function Sidebar() {
   } = useGetMarketwatchQuery({ refetchOnMountOrArgChange: true });
 
   useEffect(() => {
-    isLoading ? setdata([]) : setdata(marketdata?.data);
+    setdata(marketdata?.data)
     let length = 0;
 
     marketdata?.data.forEach((ele) => {
@@ -49,7 +50,7 @@ function Sidebar() {
         break;
       }
     }
-  }, [data]);
+  }, [isLoading,marketdata]);
 
   const onleave = (item, i) => {
     let id = document.getElementsByClassName(`hoverbutton${i}`);
@@ -83,6 +84,13 @@ function Sidebar() {
 
   const handlesearch = (e) => {
     document.getElementsByClassName("omni-results")[0].style.display = "block";
+    console.log(e);
+    let search=page?.items?.filter((ele)=>{
+      
+      return ele?.tradingsymbol?.toLowerCase()?.includes(e?.toLowerCase())
+    })
+    setsearchdata(search)
+
   };
 
   const handleDragStart = (index) => {
@@ -135,7 +143,7 @@ function Sidebar() {
           style={{ zIndex: "2", display: "none" }}
         >
           <ul className="w-100 m-0 p-0">
-            {page.items?.map((ele) => {
+            {searchdata?.map((ele) => {
               return (
                 <li className="w-100 d-flex align-items-center justify-content-between p-2 m-0 border-bottom ">
                   <span>{ele.tradingsymbol}</span>
@@ -151,8 +159,8 @@ function Sidebar() {
       </div>
       <div className="instrument">
         <div>
-          {page.items && page.items.length > 0 ? (
-            page.items.map((ele, i) => {
+          {page?.items?.length > 0 ? (
+            page?.items?.map((ele, i) => {
               return (
                 <>
                   <div
@@ -165,7 +173,7 @@ function Sidebar() {
                     key={i}
                     onMouseLeave={() => onleave(ele, i)}
                     onMouseEnter={() => onenter(ele, i)}
-                    // className={`sidebardata${i} sidebarhover   position-relative   padding12 `}
+
                     className={
                       dragOverItemIndex === i
                         ? `list-item next-position sidebardata${i} sidebarhover    position-relative   padding12`
@@ -471,7 +479,7 @@ function Sidebar() {
       </div>
 
       <ul className="ul">
-        {data.map((el, i) => {
+        {data?.map((el, i) => {
           return (
             <li
               key={i}

@@ -16,10 +16,10 @@ function Funds() {
   
 
   useEffect(()=>{
-    refetch()
-    isLoading ? setmargins([]) : setmargins(marginsdata?.data);
+    // refetch()
+    setmargins(marginsdata?.data)
     
-  },[margins])
+  },[marginsdata])
   
 
 

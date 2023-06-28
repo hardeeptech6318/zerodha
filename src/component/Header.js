@@ -20,9 +20,9 @@ function Header() {
   
 
   useEffect(()=>{
-    isLoading ? setprofile([]) : setprofile(profiledata?.data);
+    setprofile(profiledata?.data);
     
-  },[profile])
+  },[isLoading])
 
   
 
@@ -91,18 +91,14 @@ function Header() {
               <div className=" mx-3  ">
                 <i className="bi bi-bell"></i>
               </div>
-              <div className="">
-                <NavLink  className={({isActive}) => (isActive ? "active dropdown-toggle " : 'none')} to="/profile" >
-                
 
+<div class="nav-item dropdown" >
 
-                 <div className="dropdown">
-  <a className={({isActive}) => (isActive ? "active dropdown-toggle " : 'none')} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  <span className=" avatar">HR</span><span className="ms-1 ">{profile?.user_id}</span>
-  </a>
-
-  <ul className="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuLink"  style={{minWidth:"240px"}} >
-    <li className="border-bottom px-2 py-1"><a className="" href="#">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span className=" avatar">HR</span><span className="ms-1 ">{profile?.user_id}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li className="border-bottom px-2 py-1"><a className="" href="#">
       <div className=" text-wrap" style={{fontSize:"1rem"}}>Hardeepsinh Ratansinh Parmar</div>
       <div className="label">hardeepsinhparmar2020@gmail.com</div>
       </a></li>
@@ -116,14 +112,12 @@ function Header() {
     <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-keyboard"></i></span>Keyboard shortcuts</a></li>
     <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-journal"></i></span>User manual</a></li>
     <li className="px-2 py-1"><a className="" href="#"><span className="me-2"><i className="bi bi-box-arrow-left"></i></span>Logout</a></li>
-    
-    
-  </ul>
+   
+          </ul>
+        
 </div>
 
-                 
-                </NavLink>
-              </div>
+              
               {/* <div className="ms-1 ">EM1078</div> */}
             </div>
           </div>

@@ -289,8 +289,7 @@ input,textarea,select{
 .dropdown-menu.show {
   transform: translate3d(0px, 41px, 0px) !important;
   border-radius: 0px;
-  /* top:105%; */
-  /* right: 15px; */
+ width: fit-content;
   border-width: 0 1px 1px 1px;
   border-color: #eee;
 }
@@ -428,6 +427,18 @@ input,textarea,select{
 .btn-danger{
   background-color: #ff5722;
 }
+.form-check-input:checked{
+  background-color: rgba(255,255,255,.3);
+  border: none;
+  
+}
+
+.form-check-input{
+  background-color: rgba(255,255,255,.3);
+  border: none;
+  color: white;
+}
+
 
 .nse,.bse,.other-exc{
   padding: 1px 5px;
